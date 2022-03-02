@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MSlider>
+<div id="sync1" class="owl-carousel">
+    @{int index = 0;}
+    @foreach (var s in Model)
+    {
+        if (index == 0)
+        {
+            <div class="item synced">
+                <a href="~/@Url">
+                    <img src="~/Public/images/sliders/@s.Image" alt="@s.Name" width="690px" height="350px">
+                </a>
+            </div>
+        }
+        else
+        {
+            <div class="item ">
+                <a href="~/@Url">
+                    <img src="~/Public/images/sliders/@s.Image" alt="@s.Name" width="690px" height="350px">
+                </a>
+            </div>
+        }
+        index++;
+    }
+</div>
+<!-- sua dong 1475 prev next show btn owl.carourel.js-->
+<!-- synced = active -->
+<div id="sync2" class="owl-carousel">
+    @{index = 0;}
+    @foreach (var s in Model)
+    {
+        if (index == 0)
+        {
+            <div class="item synced">
+                <div>
+                    <a href="@s.Url">
+                        @s.Name
+                    </a>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="item">
+                <div>
+                    <a href="@s.Url">
+                        @s.Name
+                    </a>
+                </div>
+            </div>
+        }
+        index++;
+    }
+</div>

@@ -1,0 +1,180 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MMenu>
+
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.Partial("_MessageAlert")
+
+<section class="content py-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <a href="~/Admin/Menu/Trash" class="text-white"><i class="far fa-trash-alt fa-xs"></i>&nbsp; Thùng rác (@(ViewBag.countTrash ?? "?"))</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-3">
+                        @using (Html.BeginForm("Index", "Menu", FormMethod.Post))
+                        {
+            <div class="card">
+                <div class="card-header form-group">
+                    <div class="row">
+                        <div class="col-5">
+                            <div class="my-2 font-weight-bold">Vị trí menu</div>
+                        </div>
+                        <div class="col-7">
+                            <select name="Position" class="form-control border border-info">
+                                <option value="header">Header</option>
+                                <option value="footer">MainMenu</option>
+                                <option value="footer">Footer</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header btn" id="headingCategory" data-toggle="collapse" data-target="#collapseCategory" aria-expanded="true" aria-controls="collapseCategory">
+                                        <span class="float-left">Loại sản phẩm</span>
+                                        <span class="float-right btn btn-sm btn-info">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </div>
+                                    <div id="collapseCategory" class="collapse p-2 m-2" aria-labelledby="headingCategory" data-parent="#accordionExample">
+                                        @foreach (var h in ViewBag.ListCat)
+                                        {
+                        <div class="form-group ml-3">
+                            <input name="itemCat" value="@h.ID" id="category@(h.ID)" type="checkbox">
+                            <label for="category@(h.ID)" class="font-weight-normal">@h.Name</label>
+                        </div>}
+                                        <div class="form-group">
+                                            <input type="submit" name="AddCat" value="Thêm" class="btn btn-success form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header btn" id="headingTopic" data-toggle="collapse" data-target="#collapseTopic" aria-expanded="true" aria-controls="collapseTopic">
+                                        <span class="float-left">Chủ đề bài viết</span>
+                                        <span class="float-right btn btn-sm btn-info">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+
+                                    </div>
+                                    <div id="collapseTopic" class="collapse p-2 m-2" aria-labelledby="headingTopic" data-parent="#accordionExample">
+                                        @foreach (var j in ViewBag.ListTopic)
+                                        {
+                        <fieldset class="form-group ml-3">
+                            <input name="itemTopic" value="@j.ID" id="topic@(j.ID)" type="checkbox">
+                            <label for="topic@(j.ID)" class="font-weight-normal">@j.Name</label>
+                        </fieldset>}
+                                        <div class="form-group">
+                                            <input type="submit" name="AddTopic" value="Thêm" class="btn btn-success form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header btn" id="headingPage" data-toggle="collapse" data-target="#collapsePage" aria-expanded="true" aria-controls="collapsePage">
+                                        <span class="float-left">Trang đơn</span>
+                                        <span class="float-right btn btn-sm btn-info">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+                                    </div>
+
+                                    <div id="collapsePage" class="collapse p-2 m-2" aria-labelledby="headingPage" data-parent="#accordionExample">
+                                        @foreach (var j in ViewBag.ListPage)
+                                        {
+                                        <div class="form-group ml-3">
+                                            <input name="itemPage" value="@j.ID" id="topic@(j.ID)" type="checkbox">
+                                            <label for="topic@(j.ID)" class="font-weight-normal">@j.Title</label>
+                                        </div>
+                                        }
+
+                                        <div class="form-group">
+                                            <input type="submit" name="AddPage" value="Thêm" class="btn btn-success form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header btn" id="headingCustom" data-toggle="collapse" data-target="#collapseCustom" aria-expanded="true" aria-controls="collapseCustom">
+                                        <span class="float-left">Tùy chỉnh</span>
+                                        <span class="float-right btn btn-sm btn-info">
+                                            <i class="fas fa-plus"></i>
+                                        </span>
+
+                                    </div>
+
+                                    <div id="collapseCustom" class="collapse p-2 m-2" aria-labelledby="headingCustom" data-parent="#accordionExample">
+                                        <div class="form-group">
+                                            <label>Tên menu</label>
+                                            <input name="name" class="form-control" id="checkid" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Liên kết</label>
+                                            <input name="link" class="form-control" type="text">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" name="AddCustom" value="Thêm" class="btn btn-success form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>}
+                    </div>
+                    <div class="col-9">
+                        <table id="cate1" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="no-sort">Tên menu</th>
+                                    <th class="no-sort">Liên kết</th>
+                                    <th class="no-sort">Vị trí</th>
+                                    <th class="no-sort text-center" style="width:10rem">Action</th>
+                                    <th class="text-center no-sort" style="width:3rem;">ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                    <tr>
+                        <td><a href="~/Admin/Menu/Details/@Html.DisplayFor(modelItem => item.ID)">@Html.DisplayFor(modelItem => item.Name)</a>  </td>
+                        <td>  @Html.DisplayFor(modelItem => item.Link)</td>
+                        <td>  @Html.DisplayFor(modelItem => item.Positon)</td>
+                        <td class="text-center">
+                            <label class="switch">
+                                @if (item.Status == 1)
+                                {<input class="changeStatus" data-id="@item.ID" data-controller="Menu" type="checkbox" checked>}
+                                else
+                                {<input class="changeStatus" data-id="@item.ID" data-controller="Menu" type="checkbox">}
+                                <span class="slider round"></span>
+                            </label>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Chỉnh sửa">
+                                <a href="@Url.Action("Edit", "Menu", new { id = item.ID })" class="text-white"><i class="fas fa-pen"></i></a>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Xóa">
+                                <a href="@Url.Action("DelTrash", "Menu", new { id = item.ID })" class="text-white"><i class="far fa-trash-alt"></i></a>
+                            </button>
+                        </td>
+                        <td class="text-center">@Html.DisplayFor(modelItem => item.ID)</td>
+                    </tr>}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,126 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<WebsiteBanDoGiaDung.Models.MPost>
+@{
+    ViewBag.Title = "Tin tức, bài viết - Mẹo vặt hàng ngày";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<div class="breadcrumb-c clearfix d-block">
+    <ul class="container-91">
+        <li><a href="/">Trang chủ </a></li>
+        <li class="dsfsd"><a href="~/tin-tuc"> Tin tức</a></li>
+    </ul>
+</div>
+<div class="container-91 row tin-tuc">
+    <div class="col-8">
+        <div id="owl-news" class="owl-carousel owl-theme">
+            @foreach (var c in ViewBag.S_News)
+            {
+                <div class="item">
+                    <a href="@c.Slug">
+                        <img src="~/Public/images/post/@c.Image" alt="" height="450" style="filter: brightness(80%)">
+                        <div class="chu-len-hinh" style="filter: brightness(100%)">
+                            <span class="news-cate">
+                                @foreach (var d in ViewBag.TopicName)
+                                {
+                                    if (c.TopicID == d.ID)
+                                    {
+                                        @d.Name
+                                    }
+                                }
+                            </span> <br>@c.Title
+                            <p class="time">  @c.Created_at</p>
+                        </div>
+                    </a>
+                </div>
+            }
+
+        </div>
+        <div class="tin-desc">
+            @foreach (var i in Model)
+            {
+                <a href="~/@i.Slug">
+                    <div class="row">
+                        <div class="col-4 image"> <img src="~/Public/images/post/@i.Image" alt="@i.Title"></div>
+                        <div class="title-de col-8 clearfix">
+                            @i.Title
+                            <div class="pt-2">
+                                <div class="news-cate">
+                                    @foreach (var d in ViewBag.TopicName)
+                                    {
+                                        if (i.TopicID == d.ID)
+                                        {
+                                            @d.Name
+                                        }
+                                    }
+                                </div>
+                                <div class="news-time">
+                                    @i.Created_at
+                                </div>
+                            </div>
+                            <div class="news-rg">
+                                @i.Description
+                            </div>
+
+                        </div>
+                    </div>
+                </a>
+            }
+            <div class="pagination-91 my-5 py-3">
+                @Html.PagedListPager(Model, page => Url.Action("Post", new { page }))
+            </div>
+        </div>
+    </div>
+    <div class="col-4 news-right">
+        <div class="title">
+          TIN TỨC THEO CHỦ ĐỀ
+        </div>
+        <div class="row">
+            @foreach (var v in ViewBag.TopicName)
+            {
+                <div class="col-6">
+                    <a href="~/@v.Slug">
+                        <button type="button" class="btn btn-light btn-outline-primary rounded-0 my-2 d-block w-100">@v.Name</button>
+                    </a>
+                </div>
+            }
+        </div>
+
+        <div class="my-3">
+            <div class="title ">
+                BÀI VIẾT MỚI
+            </div>
+            @foreach (var c in ViewBag.Right_News)
+            {
+                <div class="mt-3">
+                    <a href="@c.Slug">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="image">
+                                    <img src="~/Public/images/post/@c.Image" alt="">
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="desc-right">
+                                    <div class="cate-left">
+                                       @c.Title
+                                    </div>
+                                    <div class="cate float-left mt-1">
+                                        @foreach (var d in ViewBag.TopicName)
+                                        {
+                                            if (c.TopicID == d.ID)
+                                            {
+                                                @d.Name
+                                            }
+                                        }
+                                    </div>
+                                    <div class="time float-left mt-1 pl-2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>  
+        <div style="margin-bottom:50px"></div>
+    </div>
+</div>

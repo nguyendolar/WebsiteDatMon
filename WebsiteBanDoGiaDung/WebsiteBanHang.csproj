@@ -1,0 +1,534 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{77FA8AB9-6A6E-4D13-A733-98FB2D21F85F}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebsiteBanDoGiaDung</RootNamespace>
+    <AssemblyName>WebsiteBanDoGiaDung</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44376</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Mail\G_Mail.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Public\Admin\css\adminlte.min.css" />
+    <Content Include="Public\Admin\css\all.min.css" />
+    <Content Include="Public\Admin\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Public\Admin\css\daterangepicker.css" />
+    <Content Include="Public\Admin\css\font-sans.pro.css" />
+    <Content Include="Public\Admin\css\icheck-bootstrap.min.css" />
+    <Content Include="Public\Admin\css\jqvmap.min.css" />
+    <Content Include="Public\Admin\css\OverlayScrollbars.min.css" />
+    <Content Include="Public\Admin\css\responsive.bootstrap4.min.css" />
+    <Content Include="Public\Admin\css\style.css" />
+    <Content Include="Public\Admin\css\summernote-bs4.css" />
+    <Content Include="Public\Admin\css\sweetalert2.min.css" />
+    <Content Include="Public\Admin\css\tempusdominus-bootstrap-4.min.css" />
+    <Content Include="Public\Admin\css\toastr.min.css" />
+    <Content Include="Public\Admin\images\le-gia-lai.jpg" />
+    <Content Include="Public\Admin\images\202007071001019537_web.jpg" />
+    <Content Include="Public\Admin\images\202007091003260452_chiến-1.jpg" />
+    <Content Include="Public\Admin\images\690-300-690x300-19.png" />
+    <Content Include="Public\Admin\images\AdminLTELogo.png" />
+    <Content Include="Public\Admin\images\bg-01.jpg" />
+    <Content Include="Public\Admin\images\bg-011.jpg" />
+    <Content Include="Public\Admin\images\boxed-bg.jpg" />
+    <Content Include="Public\Admin\images\boxed-bg.png" />
+    <Content Include="Public\Admin\images\credit\american-express.png" />
+    <Content Include="Public\Admin\images\credit\cirrus.png" />
+    <Content Include="Public\Admin\images\credit\mastercard.png" />
+    <Content Include="Public\Admin\images\credit\mestro.png" />
+    <Content Include="Public\Admin\images\credit\paypal.png" />
+    <Content Include="Public\Admin\images\credit\paypal2.png" />
+    <Content Include="Public\Admin\images\credit\visa.png" />
+    <Content Include="Public\Admin\images\default-150x150.png" />
+    <Content Include="Public\Admin\images\icon-256x256.png" />
+    <Content Include="Public\Admin\images\icons.png" />
+    <Content Include="Public\Admin\images\lg-43um7400pta-15-550x340.jpg" />
+    <Content Include="Public\Admin\images\photo4.jpg" />
+    <Content Include="Public\Admin\images\samsung-ua50ru7200-%285%29.jpg" />
+    <Content Include="Public\Admin\images\Tuoinaonhinlavanguachieunay-690-300-690x300-1.png" />
+    <Content Include="Public\Admin\images\user2-160x160.jpg" />
+    <Content Include="Public\Admin\images\user\3.jpg" />
+    <Content Include="Public\Admin\images\user\nghiep.jpg" />
+    <Content Include="Public\Admin\images\user\nguyen-van-nghiep.jpg" />
+    <Content Include="Public\Admin\images\user\root.jpg" />
+    <Content Include="Public\Admin\js\adminlte.min.js" />
+    <Content Include="Public\Admin\js\bootstrap.bundle.min.js" />
+    <Content Include="Public\Admin\js\ckeditor.js" />
+    <Content Include="Public\Admin\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Public\Admin\js\j.js" />
+    <Content Include="Public\Admin\js\jquery.dataTables.min.js" />
+    <Content Include="Public\Admin\js\jquery.min.js" />
+    <Content Include="Public\Admin\js\jquery.overlayScrollbars.min.js" />
+    <Content Include="Public\Admin\js\karma.laclac.min.js" />
+    <Content Include="Public\Admin\js\summernote-bs4.min.js" />
+    <Content Include="Public\Admin\js\sweetalert2.min.js" />
+    <Content Include="Public\Admin\js\tempusdominus-bootstrap-4.min.js" />
+    <Content Include="Public\Admin\js\toastr.min.js" />
+    <Content Include="Public\Admin\webfonts\fa-brands-400.svg" />
+    <Content Include="Public\Admin\webfonts\fa-regular-400.svg" />
+    <Content Include="Public\Admin\webfonts\fa-solid-900.svg" />
+    <Content Include="Public\css\all.min.css" />
+    <Content Include="Public\css\bootstrap.min.css" />
+    <Content Include="Public\css\imageSprite.css" />
+    <Content Include="Public\css\owl.carousel.css" />
+    <Content Include="Public\css\style.css" />
+    <Content Include="Public\css\stylee.css" />
+    <Content Include="Public\css\styles.css" />
+    <Content Include="Public\images\account.svg" />
+    <Content Include="Public\images\AdminLTELogo.png" />
+    <Content Include="Public\images\banners\03-1200x140.jpg" />
+    <Content Include="Public\images\bg-01.jpg" />
+    <Content Include="Public\images\bg-011.jpg" />
+    <Content Include="Public\images\boxed-bg.jpg" />
+    <Content Include="Public\images\boxed-bg.png" />
+    <Content Include="Public\images\credit\american-express.png" />
+    <Content Include="Public\images\credit\cirrus.png" />
+    <Content Include="Public\images\credit\mastercard.png" />
+    <Content Include="Public\images\credit\mestro.png" />
+    <Content Include="Public\images\credit\paypal.png" />
+    <Content Include="Public\images\credit\paypal2.png" />
+    <Content Include="Public\images\credit\visa.png" />
+    <Content Include="Public\images\danh-gia-robot-hut-bui-mi-robot-vacuum-mop-11-665x320.jpg" />
+    <Content Include="Public\images\default-150x150.png" />
+    <Content Include="Public\images\icon-256x256.png" />
+    <Content Include="Public\images\icon-h.png" />
+    <Content Include="Public\images\icon-k.png" />
+    <Content Include="Public\images\iconcatv2.png" />
+    <Content Include="Public\images\iconIdN.png" />
+    <Content Include="Public\images\icons.png" />
+    <Content Include="Public\images\labelmarketWar.png" />
+    <Content Include="Public\images\null.png" />
+    <Content Include="Public\images\online-giảm-sốc-1x.png" />
+    <Content Include="Public\images\photo4.jpg" />
+    <Content Include="Public\images\samsung-ua50ru7200-%285%29.jpg" />
+    <Content Include="Public\images\sliders\deal-cuc-dinh.png" />
+    <Content Include="Public\images\sliders\deal-soc.png" />
+    <Content Include="Public\images\sliders\sale-kin-loi.png" />
+    <Content Include="Public\images\sliders\stickert5-03-394x75.png" />
+    <Content Include="Public\images\sliders\title.png" />
+    <Content Include="Public\images\user2-160x160.jpg" />
+    <Content Include="Public\images\user\3.jpg" />
+    <Content Include="Public\images\user\khach-hang-1.jpg" />
+    <Content Include="Public\images\user\le-lai.jpg" />
+    <Content Include="Public\images\user\root.jpg" />
+    <Content Include="Public\js\bootstrap.bundle.min.js" />
+    <Content Include="Public\js\bootstrap.min.js" />
+    <Content Include="Public\js\jquery-3.5.1.js" />
+    <Content Include="Public\js\jquery-3.5.1.slim.min.js" />
+    <Content Include="Public\js\owl.carousel.js" />
+    <Content Include="Public\js\popper.min.js" />
+    <Content Include="Public\js\sweetalert2%409.js" />
+    <Content Include="Public\js\target.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Category\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_MessageAlert.cshtml" />
+    <Content Include="Areas\Admin\Views\Auth\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Page\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\User\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slider\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Order\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Reply.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Topic\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Post\Trash.cshtml" />
+    <Content Include="Areas\Admin\Views\Auth\Profiles.cshtml" />
+    <Content Include="Areas\Admin\Views\Auth\_Test.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupUser\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupUser\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\GroupUser\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\User\IndexAdmin.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Statistical.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductOwner\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductOwner\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductOwner\Index.cshtml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Public\Admin\css\adminlte.min.css.map" />
+    <Content Include="Public\Admin\css\font\summernote.eot" />
+    <Content Include="Public\Admin\css\font\summernote.ttf" />
+    <Content Include="Public\Admin\css\font\summernote.woff" />
+    <Content Include="Public\Admin\css\font\summernote.woff2" />
+    <Content Include="Public\Admin\js\adminlte.min.js.map" />
+    <Content Include="Public\Admin\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Public\Admin\js\summernote-bs4.min.js.map" />
+    <Content Include="Public\Admin\webfonts\fa-brands-400.eot" />
+    <Content Include="Public\Admin\webfonts\fa-brands-400.ttf" />
+    <Content Include="Public\Admin\webfonts\fa-brands-400.woff" />
+    <Content Include="Public\Admin\webfonts\fa-brands-400.woff2" />
+    <Content Include="Public\Admin\webfonts\fa-regular-400.eot" />
+    <Content Include="Public\Admin\webfonts\fa-regular-400.ttf" />
+    <Content Include="Public\Admin\webfonts\fa-regular-400.woff" />
+    <Content Include="Public\Admin\webfonts\fa-regular-400.woff2" />
+    <Content Include="Public\Admin\webfonts\fa-solid-900.eot" />
+    <Content Include="Public\Admin\webfonts\fa-solid-900.ttf" />
+    <Content Include="Public\Admin\webfonts\fa-solid-900.woff" />
+    <Content Include="Public\Admin\webfonts\fa-solid-900.woff2" />
+    <Content Include="Public\css\bootstrap.min.css.map" />
+    <Content Include="Public\js\bootstrap.min.js.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AuthController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\GroupUserController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\OrderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PageController.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductOwnerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SliderController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TopicController.cs" />
+    <Compile Include="Areas\Admin\Controllers\UserController.cs" />
+    <Compile Include="Areas\Library\CheckSlug.cs" />
+    <Compile Include="Areas\Library\ModelNotification.cs" />
+    <Compile Include="Areas\Library\Notification.cs" />
+    <Compile Include="Areas\Library\XString.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\ModuleController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Library\CheckSlug.cs" />
+    <Compile Include="Library\MailHelper.cs" />
+    <Compile Include="Library\ModelCart.cs" />
+    <Compile Include="Library\ModelNotification.cs" />
+    <Compile Include="Library\Notification.cs" />
+    <Compile Include="Library\XString.cs" />
+    <Compile Include="Migrations\202011240153057_InitialCreate.cs" />
+    <Compile Include="Migrations\202011240153057_InitialCreate.Designer.cs">
+      <DependentUpon>202011240153057_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104210322137_update-db.cs" />
+    <Compile Include="Migrations\202104210322137_update-db.Designer.cs">
+      <DependentUpon>202104210322137_update-db.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104221715000_add-field-user.cs" />
+    <Compile Include="Migrations\202104221715000_add-field-user.Designer.cs">
+      <DependentUpon>202104221715000_add-field-user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106091356277_update-db-2.cs" />
+    <Compile Include="Migrations\202106091356277_update-db-2.Designer.cs">
+      <DependentUpon>202106091356277_update-db-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\ListOrder.cs" />
+    <Compile Include="Models\MCategory.cs" />
+    <Compile Include="Models\MContact.cs" />
+    <Compile Include="Models\MGroupUser.cs" />
+    <Compile Include="Models\MLink.cs" />
+    <Compile Include="Models\MMenu.cs" />
+    <Compile Include="Models\MOrder.cs" />
+    <Compile Include="Models\MOrderDetail.cs" />
+    <Compile Include="Models\MPost.cs" />
+    <Compile Include="Models\MProduct.cs" />
+    <Compile Include="Models\MProductOwner.cs" />
+    <Compile Include="Models\MSlider.cs" />
+    <Compile Include="Models\MTopic.cs" />
+    <Compile Include="Models\MUser.cs" />
+    <Compile Include="Models\PostTopic.cs" />
+    <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Models\ProductTop.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Models\WebsiteBanDoGiaDungDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Account\NotFound.cshtml" />
+    <Content Include="Views\Account\Order.cshtml" />
+    <Content Include="Views\Account\OrderDetails.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
+    <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
+    <Content Include="Views\Module\_Categories.cshtml" />
+    <Content Include="Views\Module\_Footer.cshtml" />
+    <Content Include="Views\Module\_Header.cshtml" />
+    <Content Include="Views\Module\_HomePost.cshtml" />
+    <Content Include="Views\Module\_HomeSlideShow.cshtml" />
+    <Content Include="Views\Module\_ICart.cshtml" />
+    <Content Include="Views\Module\_ListCategory.cshtml" />
+    <Content Include="Views\Module\_Login.cshtml" />
+    <Content Include="Views\Module\_MainMenu.cshtml" />
+    <Content Include="Views\Module\_MiTC.cshtml" />
+    <Content Include="Views\Module\_NewsHome.cshtml" />
+    <Content Include="Views\Module\_Popu.cshtml" />
+    <Content Include="Views\Module\_SlideShow.cshtml" />
+    <Content Include="Views\Shared\_LayoutSite.cshtml" />
+    <Content Include="Views\Shared\_Nofit.cshtml" />
+    <Content Include="Views\Site\Contact.cshtml" />
+    <Content Include="Views\Site\Error.cshtml" />
+    <Content Include="Views\Site\Home.cshtml" />
+    <Content Include="Views\Site\Other.cshtml" />
+    <Content Include="Views\Site\Post.cshtml" />
+    <Content Include="Views\Site\PostDetail.cshtml" />
+    <Content Include="Views\Site\PostPage.cshtml" />
+    <Content Include="Views\Site\PostTopic.cshtml" />
+    <Content Include="Views\Site\Product.cshtml" />
+    <Content Include="Views\Site\ProductCategory.cshtml" />
+    <Content Include="Views\Site\ProductDetail.cshtml" />
+    <Content Include="Views\Site\Search.cshtml" />
+    <Content Include="Views\Site\_ProductHome.cshtml" />
+    <Content Include="Views\Module\_ListPage.cshtml" />
+    <Content Include="Views\Account\Notification.cshtml" />
+    <Content Include="Views\Account\_ActionOrder.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Public\images\news\" />
+    <Folder Include="Public\images\pages\" />
+    <Folder Include="Public\images\post\" />
+    <Folder Include="Public\images\products\" />
+    <Folder Include="Public\webfonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011240153057_InitialCreate.resx">
+      <DependentUpon>202011240153057_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104210322137_update-db.resx">
+      <DependentUpon>202104210322137_update-db.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104221715000_add-field-user.resx">
+      <DependentUpon>202104221715000_add-field-user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106091356277_update-db-2.resx">
+      <DependentUpon>202106091356277_update-db-2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>63658</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44357/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

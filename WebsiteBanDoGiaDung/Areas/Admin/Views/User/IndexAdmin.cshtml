@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.UserViewModel>
+
+@{
+    ViewBag.Title = "Index Admin";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content py-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        @Html.Partial("_MessageAlert")
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <a href="~/Admin/User/Create" class="text-white"><i class="fas fa-plus fa-xs"></i>&nbsp; Thêm mới</a>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <a href="~/Admin/User/Trash" class="text-white"><i class="far fa-trash-alt fa-xs"></i>&nbsp; Thùng rác(@( ViewBag.countTrash??"?"))</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="product" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>STT</th>
+                            <th class="no-sort text-center" style="width:3rem;">ID</th>
+                            <th class="no-sort">Họ và tên</th>
+                            <th class="no-sort">Email</th>
+                            <th class="no-sort">Quyền</th>
+                            <th class="no-sort text-center">Trạng thái</th>
+
+                            <th class="no-sort text-center" style="width:7rem">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{var stt = 1;}
+                        @foreach (var item in Model)
+                        {
+                        <tr>
+                            <td>@stt</td>
+                            <td class="text-center">@Html.DisplayFor(modelItem => item.ID)</td>
+                            <td><a href="~/Admin/User/Details/@item.ID">@Html.DisplayFor(modelItem => item.Fullname)</a> </td>
+                            <td><a href="#">@Html.DisplayFor(modelItem => item.Email)</a>  </td>
+                            <td>
+                                @if (item.Access == 1)
+                                {
+                                <p>Administrator</p>
+                                }
+                                @if (item.Access == 2)
+                                {<p>Employee</p>
+                                }
+                               
+                            </td>
+                            <td class="text-center">
+                                <div class="cSU btn" data-id="@item.ID">
+
+                                    @if (item.Status == 1)
+                                    {
+                                        <div class="text-success h6 font-italic asdfasfdsfsdfasdfasdfasdfsdf@(item.ID)">Hoạt Động</div> }
+                                    else
+                                    {
+                                        <div class="text-danger h6 font-italic asdfasfdsfsdfasdfasdfasdfsdf@(item.ID)" style="text-decoration:underline">Tạm Khóa</div>}
+                                </div>
+                            </td>
+                            <td class="text-center">
+
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Chỉnh sửa">
+                                    <a href="@Url.Action("Edit", "User", new { id = item.ID })" class="text-white"><i class="fas fa-pen"></i></a>
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Xóa">
+                                    <a href="@Url.Action("DelTrash", "User", new { id = item.ID })" class="text-white"><i class="far fa-trash-alt"></i></a>
+                                </button>
+                            </td>
+                        </tr>
+                            stt++;
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+

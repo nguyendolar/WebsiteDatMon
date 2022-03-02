@@ -1,0 +1,102 @@
+﻿@model WebsiteBanDoGiaDung.Models.MPost
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<style>
+    p iframe, img{
+        width: 100% !important;
+    }
+
+</style>
+<div class="breadcrumb-c clearfix d-block">
+    <ul class="container-91">
+        <li><a href="~/tin-tuc">Tin tức </a></li>
+        <li class="dsfsd"><a href="~/@ViewBag.breadcrumb.Slug">  @ViewBag.breadcrumb.Name</a></li>
+    </ul>
+</div>
+<div class="container-91 row news-detail pb-3">
+    <div class="col-8">
+        <div class="mid-title">
+            @Model.Title
+            <br>
+            <div class="row">
+                <div class="col-6">  <span>Ngày đăng: @Model.Created_at  </span></div>
+                <div class="col-6">
+                    <div class="text-right">
+                        <div class="fb-like" data-href="https://localhost:44376/Site/PostDetail/@Model.ID" data-width="" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+        </div>
+        <div class="desc-title mb-3">
+            @Model.Description
+        </div>
+        <div class="content">
+            @Html.Raw(Model.Detail)
+            <div class="border-bottom pb-2 border-success"></div>
+
+            <div class="commment-fb-cus my-3">
+                <div class="fb-comments" data-href="https://localhost:44376/Site/PostDetail/@Model.ID" data-numposts="5" data-width="100%"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 news-right">
+        <div class="title">
+            CHỦ ĐỀ KHÁC
+        </div>
+        <div class="row">
+            @foreach (var v in ViewBag.TopicName)
+            {
+    <div class="col-6">
+        <a href="~/@v.Slug">
+            @if (v.Slug == @ViewBag.breadcrumb.Slug)
+            {
+    <button type="button" class="btn btn-primary rounded-0 my-2 d-block w-100">@v.Name</button> }
+                    else
+                    {
+    <button type="button" class="btn btn-light btn-outline-primary rounded-0 my-2 d-block w-100">@v.Name</button>}
+        </a>
+    </div>            }
+        </div>
+        <div class="my-3">
+            <div class="title ">
+                BÀI VIẾT CÙNG CHỦ ĐỀ
+            </div>
+            @foreach (var c in ViewBag.listOther)
+            {
+    <div class="mt-3">
+        <a href="@c.Slug">
+            <div class="row">
+                <div class="col-3">
+                    <div class="image">
+                        <img src="~/Public/images/post/@c.Image" alt="">
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="desc-right">
+                        <div class="cate-left">
+                            @c.Title
+                        </div>
+                        <div class="cate float-left mt-1">
+                            @foreach (var d in ViewBag.TopicName)
+                            {
+                                if (c.TopicID == d.ID)
+                                {
+            @d.Name}
+                            }
+                        </div>
+                        <div class="time float-left mt-1 pl-2"></div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>            }
+        </div>
+
+        
+    </div>
+
+</div>

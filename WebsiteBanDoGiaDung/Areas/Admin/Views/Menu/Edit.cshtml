@@ -1,0 +1,85 @@
+﻿@model WebsiteBanDoGiaDung.Models.MMenu
+
+@{
+    ViewBag.Title = "Chỉnh sửa";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.Partial("_MessageAlert")
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <section class="content py-2">
+        <div class="container-fluid">
+            <!--Content-->
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                        <div class="col-8">
+                            <h5 class="text-csm">@ViewBag.Title</h5>
+                        </div>
+                        <div class="col-4">
+                            <div class="float-right pt-1">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-save"></i>&nbsp; Update
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm">
+                                    <a href="~/Admin/Menu/Index" class="text-white"><i class="fas fa-door-open"></i>&nbsp; Thoát</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="form-horizontal">
+
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                @Html.HiddenFor(model => model.ID)
+                                @Html.HiddenFor(model => model.Created_at)
+                                @Html.HiddenFor(model => model.Created_by)
+                                @Html.HiddenFor(model => model.Type)
+                                @Html.HiddenFor(model => model.TableID)
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Tên menu</label>
+                                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-2">Link</label>
+                                    @Html.EditorFor(model => model.Link, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                                    @Html.ValidationMessageFor(model => model.Link, "", new { @class = "text-danger" })
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="control-label col-md-10">Cấp cha</label>
+                                @Html.DropDownListFor(model => model.ParentID, (SelectList)ViewBag.parentMenu, "[Là cấp cha]", new { @class = "form-control" })
+                                @*@Html.DropDownListFor(model => model.ParentID, SelectList, new { @class = "form-control" })*@
+                                @Html.ValidationMessageFor(model => model.ParentID, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Vị trí hiển thị", htmlAttributes: new { @class = "control-label " })
+                                <div class="">
+                                    @Html.DropDownListFor(model => model.Positon, new[] { new SelectListItem { Value = "header", Text = "Header" }, new SelectListItem { Value = "footer", Text = "Footer" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Positon, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.Label("Trạng thái", htmlAttributes: new { @class = "control-label " })
+                                <div class="">
+                                    @Html.DropDownListFor(model => model.Status, new[] { new SelectListItem { Value = "1", Text = "Hiển thị" }, new SelectListItem { Value = "2", Text = "Không hiển thị" } }, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}

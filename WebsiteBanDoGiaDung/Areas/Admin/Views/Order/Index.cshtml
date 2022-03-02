@@ -1,0 +1,134 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.ListOrder>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.Partial("_MessageAlert")
+<section class="content py-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <a href="~/Admin/Order/Trash" class="text-white"><i class="far fa-trash-alt fa-xs"></i>&nbsp; Đơn hàng đã hủy(@(ViewBag.countTrash ?? "?"))</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="cate1" class="table table-bordered table-hover" style="font-size:15px">
+                    <thead>
+                        <tr>
+                            <th class="text-center no-sort text-dark" style="width:3rem;">#</th>
+                            <th class="text-primama"> Khách hàng </th>
+                            <th class="no-sort text-primama text-center">Trạng thái</th>
+                            <th class="no-sort text-primama text-right">Tổng tiền</th>
+                            <th class="no-sort text-primama">Ngày Đặt</th>
+                            <th class="no-sort text-primama">ExportDate</th>
+                            <th class="no-sort text-center text-primama" style="width:10rem">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var c in Model)
+                        {
+            <tr>
+                <td class="text-center">
+                    @c.ID
+                </td>
+                <td>
+                    <a href="admin/order/detail?id=<%= cat.IDO%>">
+                        @c.CustomerName
+                    </a>
+                </td>
+                <td class='text-center'>
+                    <button class="StatusOrder btn p-0" data-status="@c.Status" data-id="@c.ID" data-toggle="modal"
+                            data-target="#modal-secondary">
+                        @if (c.Status == 1)
+                        {
+        <small class="badge badge-secondary ba@(c.ID)"> Chờ xử lý</small> }
+                        else if (c.Status == 2)
+                        {
+        <small class="badge badge-info ba@(c.ID)">Đang xử lý</small> }
+                        else
+                        {
+        <small class="badge badge-danger ba@(c.ID)">Hoàn thành</small>}
+
+                    </button>
+                </td>
+                <td class="text-right">
+                    @String.Format("{0:0,0₫}", c.SAmount)
+                </td>
+                <td>
+                    @c.CreateDate
+                </td>
+                <td class="export-date@(c.ID)">
+                    @c.ExportDate
+                </td>
+                <td class="text-center">
+                    <button type="button" style="background:#5bc0de" class="btn btn-sm px-3" data-toggle="tooltip" data-placement="top" title="Chi tiết đơn hàng">
+                        <a href="~/admin/order/details/@c.ID" class="text-white">
+                            <i class="far fa-eye"></i>
+                        </a>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm px-3" data-toggle="tooltip" data-placement="top" title="Xóa">
+                        <a href="@Url.Action("DelTrash", "Order", new { id = c.ID })" class="text-white"><i class="far fa-trash-alt"></i></a>
+                    </button>
+                </td>
+            </tr>}
+                    </tbody>
+
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+</section>
+<style>
+    .text-primama {
+        color: #1e91cf;
+    }
+</style>
+<div class="modal fade" id="modal-secondary">
+    <div class="modal-dialog">
+        <div class="modal-content bg-light">
+            <div class="modal-header">
+                <h5 class="modal-title">Trạng thái đơn hàng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body bg-white">
+                <div class="row">
+                    <div class="col-5 text-right">Trạng thái đơn hàng</div>
+                    <div class="col-7">
+                        <select class="form-control" id="optionStatus">
+                            <option value="1">Chờ Xử Lý</option>
+                            <option value="2">Đang xử lý</option>
+                            <option value="3">Hoàn thành</option>
+                        </select>
+                    </div>
+
+                    <div class="col-5 py-2 text-right">Ghi chú</div>
+                    <div class="col-7 py-2">
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="changeStatusOrder btn btn-secondary">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>

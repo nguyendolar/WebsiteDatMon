@@ -1,0 +1,72 @@
+﻿@model WebsiteBanDoGiaDung.Models.MTopic
+
+@{
+    ViewBag.Title = "Chi tiết chủ đề bài viết";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content my-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <a href="~/Admin/Topic/Edit/@Model.ID" class="text-white"><i class="fas fa-pen"></i>&nbsp; Sửa</a>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <a href="~/Admin/Topic/DelTrash/@Model.ID" class="text-white"><i class="far fa-trash-alt fa-xs"></i>&nbsp;Xóa</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table class="table table-bordered table-hover">
+
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.ID)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.ID)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Name)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Name)</td>
+                    </tr>
+                    
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.MetaKey)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.MetaKey)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.MetaDesc)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.MetaDesc)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Created_at)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Created_at)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Created_by)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Created_by)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Updated_at)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Updated_at)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Updated_by)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Updated_by)</td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

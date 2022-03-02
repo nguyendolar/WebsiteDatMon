@@ -1,0 +1,15 @@
+﻿@model WebsiteBanDoGiaDung.Models.MPost
+@{
+    ViewBag.MetaDesc = Model.MetaDesc;
+    ViewBag.MetaKey = Model.MetaKey;
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<div class="container-91">
+    <div class="h3 my-3">
+        @Model.Title
+    </div>
+
+    @Html.Raw(Model.Detail)
+</div>
+

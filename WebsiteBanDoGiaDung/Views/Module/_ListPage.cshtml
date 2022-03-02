@@ -1,0 +1,6 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MPost>
+
+@foreach (var k in Model)
+{
+    <a href="~/@k.Slug" class="ll text-decoration-none text-dark"> ‣ @k.Title</a>
+}    

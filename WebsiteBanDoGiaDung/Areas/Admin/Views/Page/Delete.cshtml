@@ -1,0 +1,86 @@
+﻿@model WebsiteBanDoGiaDung.Models.MPost
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content my-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+                            @using (Html.BeginForm())
+                            {
+                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="far fa-trash-alt fa-xs"></i> &nbsp; Xóa vĩnh viễn
+                                    </button>
+
+                                    <button type="button" class="btn btn-info btn-sm">
+                                        <a href="@Url.Action("Trash", "Page")" class="text-white"><i class="fas fa-sign-out-alt fa-xs"></i>&nbsp;   Back To List</a>
+                                    </button>
+                                </div>}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table class="table table-bordered table-hover">
+
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Id)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Id)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Title)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Title)</td>
+                    
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Detail)</th>
+                        <td scope="col">  @Html.Raw(Model.Detail)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Position)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Position)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.MetaKey)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.MetaKey)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.MetaDesc)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.MetaDesc)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Created_At)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Created_At)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Created_By)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Created_By)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Updated_At)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Updated_At)</td>
+                    </tr>
+                    <tr>
+                        <th scope="col"> @Html.DisplayNameFor(model => model.Updated_By)</th>
+                        <td scope="col">  @Html.DisplayFor(model => model.Updated_By)</td>
+                    </tr>
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

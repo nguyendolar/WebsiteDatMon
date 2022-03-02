@@ -1,0 +1,83 @@
+﻿
+<div class="container-91 title">Có gì mới cho ngày hôm nay ?</div>
+<div class="container-91 wrap clearfix">
+
+    <div class="bu-left">
+        <iframe width="100%" height="380" src="https://www.youtube.com/embed/jzD_yyEcp0M" frameborder="0"  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="bu-right">
+        @foreach (var c in Model)
+        {
+            <div class="wrap-card clearfix">
+                <a href="@c.Slug">
+                    <div class="card-img">
+                        <img src="/Public/images/post/@c.Image" alt="@c.Title" width="130">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text d-inline-block text-truncate text-dark text-wrap" style="width:20rem; height:100% ;">
+                            @c.Title
+                        </p>                     
+                    </div>
+                </a>
+            </div>
+        }
+
+
+        <div class="wrap-card clearfix">
+                <a href="">
+                    <div class="card-img">
+                        <img src="~/Public/images/danh-gia-robot-hut-bui-mi-robot-vacuum-mop-11-665x320.jpg"
+                             alt="Card image cap" width="130">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Đánh giá robot hút bụi Mi Robot Vacuum Mop -"Con sen" chính hiệu cho
+                            cuộc sống tiện nghi
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="wrap-card clearfix">
+                <a href="">
+                    <div class="card-img">
+                        <img src="~/Public/images/danh-gia-robot-hut-bui-mi-robot-vacuum-mop-11-665x320.jpg"
+                             alt="Card image cap" width="130">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Đánh giá robot hút bụi Mi Robot Vacuum Mop -"Con sen" chính hiệu cho
+                            cuộc sống tiện nghi
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="wrap-card clearfix">
+                <a href="">
+                    <div class="card-img">
+                        <img src="~/Public/images/danh-gia-robot-hut-bui-mi-robot-vacuum-mop-11-665x320.jpg"
+                             alt="Card image cap" width="130">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Đánh giá robot hút bụi Mi Robot Vacuum Mop -"Con sen" chính hiệu cho
+                            cuộc sống tiện nghi
+                        </p>
+                    </div>
+                </a>
+            </div>
+            <div class="wrap-card clearfix">
+                <a href="">
+                    <div class="card-img">
+                        <img src="~/Public/images/danh-gia-robot-hut-bui-mi-robot-vacuum-mop-11-665x320.jpg"
+                             alt="Card image cap" width="130">
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">
+                            Đánh giá robot hút bụi Mi Robot Vacuum Mop -"Con sen" chính hiệu cho
+                            cuộc sống tiện nghi
+                        </p>
+                    </div>
+                </a>
+            </div>
+    </div>
+</div>

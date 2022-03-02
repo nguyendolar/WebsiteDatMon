@@ -1,0 +1,94 @@
+﻿@model WebsiteBanDoGiaDung.Models.MPost
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@Html.Partial("_MessageAlert")
+
+@using (Html.BeginForm("Create", "Page", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+@Html.AntiForgeryToken()
+
+                <section class="content py-2">
+                    <div class="container-fluid">
+                        <div class="card">
+                            <div class="card-header">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h5 class="text-csm">@ViewBag.Title</h5>
+                                    </div>
+                                    <div class="col-4">
+                                        <div class="float-right pt-1">
+                                            <button type="submit" class="btn btn-primary btn-sm">
+                                                <i class="fas fa-save"></i>&nbsp; Save
+                                            </button>
+                                            <button type="button" class="btn btn-danger btn-sm">
+                                                <a href="~/Admin/Page" class="text-white"><i class="fas fa-door-open"></i>&nbsp; Thoát</a>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-horizontal">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                            <div class="form-group">
+                                                @Html.Label("Tên trang đơn", htmlAttributes: new { @class = "control-label" })
+                                                <div class="">
+                                                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                                                    @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.Label("Nội dung trang ")
+                                                <div class="">
+                                                    @Html.TextAreaFor(model => model.Detail, new { @class = "textarea" })
+                                                    @Html.ValidationMessageFor(model => model.Detail, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.Label("MetaKey", htmlAttributes: new { @class = "control-label" })
+                                                <div class="">
+                                                    @Html.TextAreaFor(model => model.MetaKey, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.MetaKey, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.Label("MetaDesc", htmlAttributes: new { @class = "control-label" })
+                                                <div class="">
+                                                    @Html.TextAreaFor(model => model.MetaDesc, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.MetaDesc, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-3">
+                                            <div class="form-group">
+                                                @Html.Label("Hình ảnh", htmlAttributes: new { @class = "control-label" })
+                                                <div class="">
+                                                    @Html.TextBoxFor(model => model.Image, new { type = "file", @class = "control-label" })
+                                                    @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.Label("Trạng thái", htmlAttributes: new { @class = "control-label " })
+                                                <div class="">
+                                                    @Html.DropDownListFor(model => model.Status, new[] { new SelectListItem { Value = "1", Text = "Hiển thị" }, new SelectListItem { Value = "2", Text = "Không hiển thị" } }, new { @class = "form-control" })
+                                                    @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>}
+

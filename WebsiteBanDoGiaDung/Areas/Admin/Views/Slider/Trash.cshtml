@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MSlider>
+@{
+    ViewBag.Title = "Trash";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<section class="content py-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        @Html.Partial("_MessageAlert")
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <a href="~/Admin/Slider" class="text-white"> <i class="fas fa-sign-out-alt "></i>&nbsp; Thoát</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="product" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="no-sort text-center" style="width:3rem;">ID</th>
+                            <th class="no-sort text-center">Hình ảnh</th>
+                            <th class="no-sort">Tên slider</th>
+                            <th class="no-sort">Vị trí</th>
+
+                            <th class="no-sort text-center" style="width:10rem">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+            <tr>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.Id)</td>
+                <td><img src="~/Public/Library/img/slider/@Html.DisplayFor(modelItem => item.Img)" alt="Error" width="70" class="d-block m-auto" />  </td>
+                <td><a href="#">@Html.DisplayFor(modelItem => item.Name)</a>  </td>
+                <td>
+                    @if (item.Position == "1")
+                    {
+                        <text>SlideShow</text> 
+                    }
+                    else
+                    {
+                        <text>RightSlideShow</text>
+                    }
+                </td>
+
+                <td class="text-center">
+                    <button type="button" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Khôi phục">
+                        <a href="@Url.Action("ReTrash", "Slider", new { id = item.Id })" class="text-white"><i class="fas fa-undo-alt"></i></a>
+                    </button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-toggle="tooltip" data-placement="top" title="Xóa vĩnh viễn">
+                        <a href="@Url.Action("Delete", "Slider", new { id = item.Id })" class="text-white"><i class="far fa-trash-alt"></i></a>
+                    </button>
+                </td>
+            </tr>}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

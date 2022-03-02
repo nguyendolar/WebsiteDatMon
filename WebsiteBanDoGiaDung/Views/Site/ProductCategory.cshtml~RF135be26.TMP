@@ -1,0 +1,104 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<WebsiteBanDoGiaDung.Models.MProduct>
+@{
+    ViewBag.Title = ViewBag.CatName;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div class="" style="background:#f3f3f3">
+    <div class="breadcrumb-c clearfix d-block pl-2">
+        <ul class="container-91">
+            <li><a href="~/">Trang chủ </a></li>
+            <li class="dsfsd"><a href="~/@ViewBag.Slug"> @ViewBag.CatName</a></li>
+        </ul>
+    </div>
+
+    <div class="container-91 py-1" style="background: #f3f3f3">
+        <div class="row">
+            <div class="col-3 w-100">
+                @Html.Action("ListCategory", "Module")
+            </div>
+            <div class="col-9" style="margin-left:-20px; margin-right:20px;">
+                <div class="text-left pl-3 py-3 border bg-white rounded-top">
+                    <div class="h5 font-weight-bold d-inline">@ViewBag.CatName </div>
+                    <div class="d-inline text-secondary">(@ViewBag.CountingTheProduct sản phẩm)</div>
+                </div>
+                <div class="mt-1 pl-3 py- border border-bottom-0 bg-white rounded-top">
+                    <div class="row">
+                        <div class="col-8"></div>
+                        <div class="col-2">
+                            <select class="form-control form-control-sm my-2" style="height:27px;font-size:12px;">
+                                <option>Bán chạy nhất</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                            </select>
+                        </div>
+                        <div class="col-2">
+                            <div class="text-right">
+                                <button class="btn grid"><i class="grid-icon-active i"></i> </button>
+                                <button class="btn list"><i class="list-icon i"></i> </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-category border border-right-0 border">
+                    @if (Model.Count() == 0)
+                    {
+                        <div class="text-center text-danger mt-5"> Danh mục chưa có sản phẩm</div>
+                    }
+                    else
+                    {
+                        foreach (var row in Model)
+                        {
+                            <div class="nghiep-item item border-right border-bottom">
+                                <a href="~/@row.Slug">
+                                    <div class="t-img">
+                                        <img src="~/Public/images/products/@row.Image" alt="" class="beau">
+                                        @if (row.Installment == 1)
+                                        {
+                                            <div class="anw">Trả góp <span class="font-weight-bold">0%</span></div>
+                                        }
+
+                                    </div>
+                                    <div class="g">
+                                        <div class="couple">
+                                            @if (row.Installment == 1)
+                                            {
+                                                <div class="anw">Trả góp <span class="font-weight-bold">0%</span></div>
+                                                <div class="giam">Giảm 200,000đ</div>
+                                            }
+                                            @if (row.Discount == 1)
+                                            {
+                                                <img src="~/Public/images/online-giảm-sốc-1x.png" class="h-100" />
+                                            }
+                                        </div>
+                                        <div class="t-np">
+                                            @row.Name
+                                        </div>
+                                        <div class="t-price">
+                                            <div class="price">
+                                                @String.Format("{0:0,0₫}", row.ProPrice)
+                                            </div>
+                                            <div class="old-price float-left">
+                                                @String.Format("{0:0,0₫}", row.ProPrice)
+                                            </div>
+                                            <small class="khongbietdattenlagi float-left text-danger">&nbsp; (-@String.Format("{0:0}", ((row.Price - row.ProPrice) / row.Price * 100))%)</small>
+                                        </div>
+                                        <img src="~/Public/images/online-giảm-sốc-1x.png" class="onlinegiamsoc" />
+                                    </div>
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="pagination-91 my-3">
+            @Html.PagedListPager(Model, page => Url.Action("Index", "Site", new { slug = ViewBag.Slug, page }))
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</div>

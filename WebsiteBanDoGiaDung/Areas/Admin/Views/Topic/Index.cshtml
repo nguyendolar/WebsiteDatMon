@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MTopic>
+
+@{
+    ViewBag.Title = "Quản lý chủ đề";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<section class="content py-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        @Html.Partial("_MessageAlert")
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+                            <button type="button" class="btn btn-primary btn-sm">
+                                <a href="~/Admin/Topic/Create" class="text-white"><i class="fas fa-plus fa-xs"></i>&nbsp; Thêm mới</a>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <a href="~/Admin/Topic/Trash" class="text-white"><i class="far fa-trash-alt fa-xs"></i>&nbsp; Thùng rác(@(@ViewBag.countTrash ?? "?"))</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="cate1" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center no-sort" style="width:3rem;">ID</th>
+                            <th class="no-sort">Tên chủ đề</th>
+                            <th class="no-sort">Slug</th>
+                            <th class="no-sort">Ngày tạo</th>
+                            <th class="no-sort text-center" style="width:10rem">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@Html.DisplayFor(modelItem => item.ID)</td>
+                                <td><a href="~/Admin/Topic/Details/@item.ID">@Html.DisplayFor(modelItem => item.Name)</a>  </td>
+                                <td><a href="~/@item.Slug">@Html.DisplayFor(modelItem => item.Slug)</a> </td>
+                                <td>  @Html.DisplayFor(modelItem => item.Created_at)</td>
+                                <td class="text-center">
+                                    <label class="switch">
+                                        @if (item.Status == 1)
+                                        {<input class="changeStatus" data-id="@item.ID" data-controller="Topic" type="checkbox" checked>}
+                                        else
+                                        {<input class="changeStatus" data-id="@item.ID" data-controller="Topic" type="checkbox">}
+                                        <span class="slider round"></span>
+                                    </label>
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Chỉnh sửa">
+                                        <a href="@Url.Action("Edit", "Topic", new { id = item.ID })" class="text-white"><i class="fas fa-pen"></i></a>
+                                    </button>
+                                    <button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Xóa">
+                                        <a href="@Url.Action("DelTrash", "Topic", new { id = item.ID })" class="text-white"><i class="far fa-trash-alt"></i></a>
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+

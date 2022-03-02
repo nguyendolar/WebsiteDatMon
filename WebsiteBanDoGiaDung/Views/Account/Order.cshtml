@@ -1,0 +1,181 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MOrder>
+@{ ViewBag.Title = "Đơn hàng của tôi";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml"; }
+@Html.Partial("_Nofit")
+
+<div style="background:#f5f5f5; min-height:32rem">
+    <div class="container-91 mx-auto">
+        <div class="row">
+            <div class="col-3 mt-5">
+                <div class="">
+                    <div class="float-left">
+                        @*<img src="images/boxed-bg.png" ralt="" width="50"
+                            class="rounded-circle">*@
+                    </div>
+                    <div class="float-left pl-3 border-bottom">
+                        <small class="font-weight-bold"> @Session["User_Name"]</small><br>
+                       
+                    </div>
+                </div>
+                <br>
+                <div style="clear:both"></div>
+                <div class="mt-4 pl-3">
+                    <ul class="nav flex-column">
+                       
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="order" style="font-size: 14px;">
+                                <i class="far fa-file-alt"></i>
+                                &nbsp Đơn mua
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-9 bg- mt-3" style="width:50rem; margin-left:-50px">
+                <div class="list-group flex-sm-row" id="listtab-order" role="tablist">
+                    <li class="text-center list-group-item list-group-item-action active" data-toggle="list"
+                        href="#home" role="tab">Tất cả</li>
+
+                    
+                </div>
+
+                <div class="tab-content flex-sm-row mt-2">
+                    <li class="tab-pane active" id="home" role="tabpanel">
+
+                        @foreach (var i in Model)
+                        {
+            <div class="my-2" style="background-color: white;">
+                <div class="row">
+                    <div class="col-6">
+                        <small class="text-secondary d-inline-block pt-3 pl-3">ID đơn hàng: @i.ID</small>
+                    </div>
+                    <div class="col-6 text-right  my-2 pt-2 ">
+                        <small class="d-inline text-secondary">Trạng thái |</small>
+                        <div class="d-inline pr-3 text-uppercase" style="color:#ee4d2d; font-size:14px">
+                            @{ if (i.Status == 1)
+                                {
+                <span>Chờ xử lý</span> }
+            else if (i.Status == 2)
+            {
+<span>Đang xử lý</span> }
+else
+{
+<span>Hoàn thành</span> } }
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 border-left-0 border-right-0 border-bottom-0 mx-3">
+                    @{ double Total = 0;}
+                    @foreach (var v in ViewBag.itemOrder)
+                    {
+
+                        if (i.ID == v.OrderID)
+                        {
+                            Total += v.Price * v.Quantity;
+    <div class="row my-3 pb-3 mx-2" style="border-bottom:1px solid #eee">
+
+        @foreach (var p in ViewBag.productOrder)
+        {
+            if (p.ID == v.ProductID)
+            {
+<div class="col-2">
+    <div class="vertical-center">
+        <img class="d-block mx-auto" src="~/Public/images/products/@p.Image" width="100">
+    </div>
+</div>
+                                <div class="col-8">
+                                    <div class="card-body my-0">
+                                        <div class="card-text text-dark">
+                                            <a href="~/@p.Slug" class="text-decoration-none text-dark text-uppercase">
+                                                @p.Name
+                                            </a>
+                                        </div>
+                                        <div class="text-dark" style="font-size:12px">x @v.Quantity</div>
+                                        @*<p class="card-text">
+                                                <small class="text-muted">_</small>
+                                            </p>*@
+                                    </div>
+                                </div>}
+                        }
+        <div class="col-2 mt-3">
+            <small class="text-dark">
+                @String.Format("{0:0,0₫}", v.Price)
+            </small>
+        </div>
+    </div>}
+}
+                </div>
+                <div class="row">
+                    <div class="col-12 my-2">
+                        <div class="text-right pr-5">
+                            <h6 class="d-inline text-dark">Tổng số tiền: </h6>
+                            <h3 class="d-inline" style="color:#ee4d2d">
+                                @String.Format("{0:0,0₫}", Total)
+
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <small class='text-secondary pl-3'>Ngày đặt hàng : @i.CreateDate</small>
+                    </div>
+                    <div class="col-7 pt-2 pb-3">
+                        <div class="text-right mr-3">
+                            
+                            <button style="border:1px solid #ccc" class="btn rounded-0 py-2 ml-2">
+                                <small>
+                                    <a href="~/account/orderdetails/@i.ID"
+                                       class="text-dark text-decoration-none py-3 px-5">
+                                        Chi tiết đơn hàng
+                                    </a>
+                                </small>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>}
+
+
+
+
+                    </li>
+                    <li class="tab-pane" id="profile" role="tabpanel">...</li>
+                    <li class="tab-pane" id="messages" role="tabpanel">...</li>
+                    <li class="tab-pane" id="settings" role="tabpanel">...</li>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<style>
+    #listtab-order .active {
+        border-bottom: 3px solid #ee4d2d;
+        background: #fff;
+        color: #ee4d2d;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .list-group-item {
+        border-bottom: 1px solid #eee;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .vertical-center {
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+</style>
+

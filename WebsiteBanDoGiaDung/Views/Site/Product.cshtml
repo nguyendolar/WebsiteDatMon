@@ -1,0 +1,57 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<WebsiteBanDoGiaDung.Models.MProduct>
+@{
+    ViewBag.Title = "Tất cả sản phẩm";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<div class="breadcrumb-c clearfix d-block">
+    <ul class="container-91">
+        <li><a href="/">Trang chủ </a></li>
+        <li class="dsfsd"><a href="~/san-pham"> Tất cả sản phẩm</a></li>
+    </ul>
+</div>
+<div style="clear:both"></div>
+<div class="container-91 py-1">
+
+    <h4 class="text-center mb-4 p-0">Tất cả sản phẩm</h4>
+    <div class="">
+        @foreach (var row in Model)
+        {
+            <div class="t-item" style="width:20%">
+                <a href="~/@row.Slug">
+                    <div class="t-img">
+                        <img src="~/Public/images/products/@row.Image" alt="" class="beau">
+                        @if (row.Discount == 1)
+                        {
+                            
+                        }
+                    </div>
+                    <div class="couple">
+                        @if (row.Discount == 1)
+                        {
+                            <img src="~/Public/images/online-giảm-sốc-1x.png" alt="" class="h-100">
+                        }
+                    </div>
+                    <div class="t-np">
+                        @row.Name
+                    </div>
+                    <div class="t-price">
+                        <div class="price">
+                            @String.Format("{0:0,0₫}", row.ProPrice)
+                        </div>
+                        <div class="old-price float-left">
+                            @String.Format("{0:0,0₫}", row.Price)
+                        </div>
+                        <div class="khongbietdattenlagi float-left">(-@String.Format("{0:0}", ((row.Price - row.ProPrice) / row.Price * 100))%)</div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+
+
+    <div class="pagination-91 my-5 py-3">
+        @Html.PagedListPager(Model, page => Url.Action("Product", new { page }))
+    </div>
+</div>
+<div style="clear:both"></div>

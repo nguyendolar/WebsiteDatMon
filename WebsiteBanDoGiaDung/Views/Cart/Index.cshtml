@@ -1,0 +1,100 @@
+﻿@using WebsiteBanDoGiaDung.Library
+@{
+    ViewBag.Title = "Giỏ hàng của bạn";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+    @Html.Partial("_Nofit")
+
+<div style="min-height:535px;" class="bg-light py-3" id="checkout">
+    @if (Session["Cart"] == null)
+    {
+        <div class="container checkout-cart">
+            <img src="~/Public/images/null.png" alt="Giỏ hàng của bạn đang trống" class="d-block m-auto" width="250" />
+            <p class="text-center font-weight-bold" style="opacity: .6;">Giỏ hàng của bạn trống</p>
+            <div class="btn rounded-0 m-auto d-block" style="width:200px; background:#ee4d2d">
+                <a href="/" class="text-light text-decoration-none">MUA NGAY</a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="container checkout-cart">
+            <div class="row">
+                <div class="col-12 my-cart pl-5"><i class="fas fa-carrot text-success pr-2"></i> Giỏ hàng của bạn</div>
+            </div>
+            <div class="row title mt-3 mb-2">
+                <div class="col-5 pl-5">
+                    <input class="form-check-input" type="checkbox" style="position: relative;">
+                    &nbsp;&nbsp; &nbsp;Sản phẩm
+                </div>
+                <div class="col-2 text-center">Đơn giá</div>
+                <div class="col-2 text-center">Số lượng</div>
+                <div class="col-2 text-center">Thành tiền</div>
+                <div class="col-1 text-center">Thao tác</div>
+            </div>
+
+            @{double Tong = 0; int count = 0;}
+            @foreach (var c in (List<ModelCart>)Session["Cart"])
+            {
+                count++;
+                Tong += (c.Price * c.Quantity);
+                <div class="row content border-right border-bottom border-left">
+                    <div class="col-5 pl-5">
+                        <input class="form-check-input" type="checkbox" style="position: relative;">&nbsp;&nbsp; &nbsp;
+                        <a href="~/@c.Slug" class="text-decoration-none text-dark">
+                            <img src="~/Public/images/products/@c.Image" alt=" @c.Name" width="70">
+                            &nbsp; &nbsp; @c.Name
+                        </a>
+                    </div>
+                    <div class="col-2 text-center"> @c.Price.ToString("N0")₫</div>
+                    <div class="col-2 text-center">
+                        <div class="btn rounded-0 dout update" id="" data-id="@c.ProductID" data-options="minus">-</div>
+
+                        <input type="number" class="rounded-0 border etd pl-3 bg-white mouse-click" style="width:50px; height:34px;margin:-5px;outline:0;border: 0;text-align:center" value="@c.Quantity" min="1" data-id="@c.ProductID" disabled>
+
+                        <div class="btn rounded-0 douc update" data-id="@c.ProductID" data-options="add">+</div>
+                    </div>
+
+                    <div class="col-2 text-center" style="color:#ee4d2d">
+                        @((c.Price * c.Quantity).ToString("N0"))₫
+                    </div>
+                    <div class="col-1 text-center">
+                        <a href="#" class="b-remove-one text-decoration-none update" data-id="@c.ProductID" data-options="remove">Xóa</a>
+                    </div>
+                </div>
+            }
+            <div class="my-2">
+                <a href="cart/removeall" class="text-right d-block text-decoration-none" style="font-size:15px">Xóa tất cả</a>
+            </div>
+            <div class="row fb-totalp bg-white container m-auto border fixed-bottom py-3">
+                <div class="col-3 pl-5">
+                    <input class="form-check-input" type="checkbox" style="position: relative;">
+                    &nbsp;&nbsp; &nbsp;Chọn tất cả (@count)
+                </div>
+
+                <div class="col-6 text-center">
+                    <div class="float-right">
+                        Tổng tiền hàng (@count sản phẩm): &nbsp;<strong class="d-inline" style="color:#ee4d2d;font-size: 27px;">@Tong.ToString("N0")₫</strong>
+                    </div>
+                </div>
+                <div class="col-3">
+
+                    <div class="btn text-center rounded-0 text-light">
+                        <a href="#" class="checkAuth text-white text-decoration-none"> Thanh toán</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</div>
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+
+

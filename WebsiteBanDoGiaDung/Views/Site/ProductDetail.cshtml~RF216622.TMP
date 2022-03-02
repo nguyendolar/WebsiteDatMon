@@ -1,0 +1,314 @@
+﻿@model WebsiteBanDoGiaDung.Models.MProduct
+@{
+    ViewBag.Title = Model.Name;
+    ViewBag.MetaKey = Model.MetaKey;
+    ViewBag.MetaDesc = Model.MetaDesc;
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<style>
+    .breadcrumb-c .dsfsd a::after {
+        content: "";
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+</style>
+<div class="breadcrumb-c clearfix">
+    <ul class="container-91">
+        <li><a href="/">Trang chủ </a></li>
+        <li class="dsfsd"><a href="~/@ViewBag.CS"> @ViewBag.CN</a></li>
+    </ul>
+</div>
+
+<div class="container-91 detail-pt clearfix mt-2">
+
+    <div class="title-top pb-1">
+        <div class="row">
+            <div class="col-9">
+                @Model.Name
+            </div>
+            <div class="col-3">
+                <div class="text-right">
+                    <div class="fb-like" data-href="https://localhost:44376/Site/ProductDetail" data-width="" data-layout="standard" data-action="like" data-size="small" data-share="true"></div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="row my-3">
+        <div class="col-5">
+            <a href=""> <img class="img-product mt-5" src="~/Public/images/products/@Model.Image" alt="" width="90%"></a>
+        </div>
+        <div class="col-4">
+
+            @if (Model.Discount == 1)
+            {
+                <div class="bao-gia clearfix">
+                    <small class="d-inline float-left mt-1 text-secondary mr-2">Giá tại: <a href="javascript::void(0)" class="text-decoration-none text-info">TP.HCM: </a> </small>
+                    <h5 class="font-weight-bold text-dark">
+                        @String.Format("{0:0,0₫}", Model.Price)
+                    </h5>
+                    @if (Model.Installment == 1)
+                    {
+                        <div style="float:right;top:-10px;right:5px;background:#f28902; margin:0 0 0 15px; border-radius:4px;color:#f3f3f3; font-size:11px;width:70px;padding:0 5px; position:absolute">
+                            Trả góp 0%
+                        </div>
+                    }
+                </div>
+
+                <div class="row">
+                    <div class="col-12 bg-danger rounded-top"
+                         style="background: linear-gradient(to right,#e75a23 0,#bf081f 100%);">
+                        <div class="text-light text-center font-weight-bold py-2 mt-2">
+                            MUA ONLINE GIẢM SỐC
+                            <strong class="text-warning d-inline-block">
+                                @String.Format("{0:0}", ((Model.Price - Model.ProPrice) / Model.Price * 100))%
+                            </strong> CÒN
+                        </div>
+                    </div>
+                    <div class="col-12 rounded-bottom" style="background:#eee">
+                        <div class="text-center font-weight-bold py-2 mt-2 h4" style="color:#bf081f">
+                            @String.Format("{0:0,0₫}", Model.ProPrice)
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="bao-gia clearfix">
+                    @if (Model.ProPrice == Model.Price || Model.ProPrice == 0)
+                    {
+                        <small class="d-inline float-left mt-2 text-secondary mr-2">Giá tại: <a href="javascript::void(0)" class="text-decoration-none text-info">TP.HCM: </a> </small>
+                        <div class="gia">
+                            @String.Format("{0:0,0₫}", Model.Price)
+                        </div>
+                    }
+                    else
+                    {
+                        <small class="d-inline float-left mt-2 text-secondary mr-2">Giá tại: <a href="javascript::void(0)" class="text-decoration-none text-info">TP.HCM: </a> </small>
+                        <div class="gia">
+                            @String.Format("{0:0,0₫}", Model.ProPrice)
+                        </div>
+                        <div class="gia-gach font-weight-normal text-dark">
+                            @String.Format("{0:0,0₫}", Model.Price)
+                        </div>
+                        <small class="text-danger d-inline-block my-1 mx-2">(- @String.Format("{0:0}", ((Model.Price - Model.ProPrice) / Model.Price * 100))%)</small>
+                    }
+
+
+                    @if (Model.Installment == 1)
+                    {
+                        <div style="float:right;top:-10px;right:0;background:#f28902; margin:0 0 0 15px; border-radius:4px;color:#f3f3f3; font-size:11px;width:70px;padding:0 5px; position:absolute">
+                            Trả góp 0%
+                        </div>
+                    }
+                </div>
+            }
+            @Html.Raw(Model.Detail)
+            <div class="row my-2 border">
+                <div class="col-12 bg-light">
+                    <div class="pl-3 font-weight-bold py-2 mt-2 float-left">KHUYẾN MẠI</div> <small class="float-left text-secondary pl-2 pt-3"> (Áp dụng dự kiến đến 07/07/2027)</small>
+                </div>
+                <div class="col-12" style="min-height:200px">
+                    @{int count = 1;
+                        foreach (var i in Model.NewPromotion.Split(new[] { '\n' }))
+                        {
+                            <small class="rounded-circle bg-primary px-1 text-light d-inline">@count</small> <small class="text-dark"> @i</small><br>
+                            count++;
+                        }
+                    }
+                </div>
+            </div>
+
+
+
+            <div class="mt-3">
+                <small class="text-secondary d-inline pr-3">Số lượng</small>
+
+                <div class="btn btn-white rounded-0 border tru" onclick="return Tru();"
+                     style="width:30px; height:30px;margin-top:-2px; line-height:15px;font-weight: bold;">
+                    -
+                </div>
+                <input type="number" style="width:50px; height:30px;margin:0 -6px;outline:0;text-align:center"
+                       class="rounded-0 border text-secondary etd pl-3 border-right-0" value="1" min="1"
+                       id="qtyDpt">
+                <div class="btn btn-white rounded-0 border cong" onclick="return Cong();"
+                     style="width:30px; height:30px;margin-top:-2px; line-height:15px;font-weight: bold;">
+                    +
+                </div>
+                <small class="text-secondary d-inline ml-4">@Model.Quantity sản phẩm có sẵn</small>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="nut-mua" id="buy-btn" data-id="@Model.ID">
+                        <button style="width:100%; height:49px; border:1px solid #ee4d2d; background:rgba(255,87,34,.15); color:#ee4d2d; font-size:14px">
+                            <i class="fas fa-cart-plus"></i> &nbsp Thêm vào giỏ hàng
+                        </button>
+                    </div>
+                </div>
+                <div class="col-6">
+
+                    <div class="nut-mua">
+                        <a href="thanh-toan" class="text-decoration-none text-light" data-id="<%= result.ID%>" id="add-one-p-t-c">
+                            <button style="width:100%; height:49px;border:0; background:-webkit-linear-gradient(top,#f59000,#fd6e1d);color:#fff; font-size:14px">
+                                Mua ngay
+                            </button>
+                        </a>
+                    </div>
+
+                    @*<div class="nut-mua" data-id="<%= result.ID%>">
+                            <button style="width:100%; height:49px;border:0; background:-webkit-linear-gradient(top,#f59000,#fd6e1d);
+                        color:#fff; font-size:14px" id="thanh-toan">
+                                Mua ngay
+                            </button>
+                        </div>*@
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="border mt-4">
+                <div class="text-success font-weight-bold text-center h6 py-2 mt-2">
+                    MUA NHƯ VUA - CHĂM SÓC NHƯ V.I.P
+                </div>
+                <small class="text-secondary border-bottom d-block pl-3 py-2 mt-2">
+                    <i class="fas fa-cogs fa-2x text-success pr-2"></i>
+                    <b class="text-dark"> Miễn phí</b> công lắp đặt
+                </small>
+                <small class="text-secondary border-bottom d-block pl-3 py-2 mt-2">
+                    <i class="fas fa-cogs fa-2x text-success pr-2"></i>
+                    Lỗi là đổi mới trong <b>1 tháng</b>
+                </small>
+                <small class="text-secondary border-bottom d-block pl-3 py-2 mt-2">
+                    <i class="fas fa-cogs fa-2x text-success pr-2"></i>
+                    Đổi trả và bảo hành cực dễz
+                </small>
+                <small class="text-secondary border-bottom d-block pl-3 py-2 mt-2">
+                    <i class="fas fa-cogs fa-2x text-success pr-2 "></i>
+                    Bảo hành <b>chính hãng </b>
+                </small>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="san-pham-cung-loai container-91">
+    <div class="title">Sản phẩm cùng danh mục</div>
+    <div class="taiche">
+        <div id="owl-wrap" class="owl-carousel owl-theme">
+            @foreach (var i in ViewBag.listOther)
+            {
+                <div class="p-item">
+                    <a href="~/@i.Slug">
+                        <div class="p-img">
+                            <img src="~/Public/images/products/@i.Image" alt="" class="beau">
+                            @if (i.Installment == 1)
+                            {
+                                <div class="anw">Trả góp <span class="font-weight-bold">0%</span></div>
+                            }
+                        </div>
+                        <div class="couple">
+                            @if (i.Discount == 1)
+                            {
+                                <img src="~/Public/images/online-giảm-sốc-1x.png" alt="" class="h-100 ">
+                            }
+                        </div>
+                        <div class="p-np">
+                            @i.Name
+                        </div>
+                        <div class="p-price ">
+
+                            @if (i.ProPrice == 0 || i.ProPrice == i.Price)
+                            {
+                                <div class="price">
+                                    @String.Format("{0:0,0₫}", i.Price)
+                                </div>
+                                <div class="old-price float-left"></div>
+                            }
+                            else
+                            {
+                                <div class="price">
+                                    @String.Format("{0:0,0₫}", i.ProPrice)
+                                </div>
+                                <div class="old-price float-left">
+                                    @String.Format("{0:0,0₫}", i.Price)
+                                </div>
+                                @*<div class="khongbietdattenlagi float-left">(@((Model.Price - Model.ProPrice) / Model.Price * 100)%)</div>*@
+                            }
+                        </div>
+                    </a>
+                </div>
+            }
+
+
+
+
+        </div>
+    </div>
+</div>
+<div class="container-91 row chi-tiet-san-pham">
+    <div class="col-8">
+        @Html.Raw(Model.Description)
+        <div class="commment-fb-cus">
+            <div class="fb-comments" data-href="https://localhost:44376/Site/ProductDetail" data-numposts="5" data-width="100%"></div>
+         </div>
+    </div>
+    <div class="col-4">
+        <div class="title-right">Thông số kỹ thuật</div>
+        <table class="table table-striped">
+            <tr>
+                <th scope="row">Công suất lạnh</th>
+                <td>1.5 HP - 12.000 BTU</td>
+            </tr>
+            <tr>
+                <th scope="row">Loại máy</th>
+                <td>Điều hoà 1 chiều (chỉ làm lạnh)</td>
+            </tr>
+            <tr>
+                <th scope="row">Công suất lạnh</th>
+                <td>1.5 HP - 12.000 BTU</td>
+            </tr>
+            <tr>
+                <th scope="row">Loại máy</th>
+                <td>Điều hoà 1 chiều (chỉ làm lạnh)</td>
+            </tr>
+            <tr>
+                <th scope="row">Công suất lạnh</th>
+                <td>1.5 HP - 12.000 BTU</td>
+            </tr>
+            <tr>
+                <th scope="row">Loại máy</th>
+                <td>Điều hoà 1 chiều (chỉ làm lạnh)</td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+<script>
+    function Cong() {
+        const num = parseInt($('.etd').val());
+        if (num < 99) {
+            $('.etd').val(num + 1);
+        }
+    }
+    function Tru() {
+        const num = parseInt($('.etd').val());
+        if (num > 1) {
+            $('.etd').val(num - 1);
+        }
+    }
+</script>
+

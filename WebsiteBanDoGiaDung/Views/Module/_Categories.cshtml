@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MCategory>
+<nav class="main-menu">
+    <ul>
+        @{int i = 1; }
+        @foreach (var c in Model@*.Take(12)*@)
+        {
+            if (c.ParentID == 0)
+            {
+            <li>
+                <a href="~/@c.Slug"><i class="nicon-@i"></i> &nbsp; @c.Name</a>
+                <ul>
+                    @foreach (var d in Model)
+                    {
+                        if (c.ID == d.ParentID)
+                        {
+                            <li>
+                                <a href="~/@d.Slug" class="font-weight-bold">@d.Name</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            </li>
+            }
+            i++;
+        }
+    </ul>
+</nav>

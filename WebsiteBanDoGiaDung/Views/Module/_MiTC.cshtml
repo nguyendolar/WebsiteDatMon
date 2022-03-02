@@ -1,0 +1,61 @@
+﻿<script src="~/Public/js/target.min.js"></script>
+@if (Session["Cart"] != null)
+{
+    <div class="t border-bottom">
+        Giỏ hàng của bạn
+    </div>
+    <ul class="container">
+        @{double Tong = 0;}
+        @foreach (var c in (List<WebsiteBanDoGiaDung.Library.ModelCart>)Session["Cart"])
+        {
+            Tong += (c.Price * c.Quantity);
+            <li>
+                <div class="row my-3">
+                    <div class="col-4">
+                        <a href="~/@c.Slug">
+                            <img src="~/Public/images/products/@c.Image" alt="@c.Name" width="70">
+                        </a>
+                    </div>
+                    <div class="col-7">
+                        <a href="~/@c.Slug" class="text-decoration-none">
+                            <div class="name"> @c.Name</div>
+                        </a>
+                        <div class="price">
+                            Đơn giá: @c.Price.ToString("N0") ₫
+                        </div>
+                        <div class="quantity">Số lượng: @c.Quantity</div>
+                    </div>
+
+                    <div class="col-1 p-0 m-0">
+                        <a href="javascript:void(0)" data-toggle="tooltip" data-placement="right" class="m-remove-one"
+                           data-id="@c.ProductID" title="Xóa khỏi giỏ hàng"><i class="fas fa-times-circle"></i></a>
+                    </div>
+                </div>
+
+            </li>
+        }
+        <div class="row mb-3 mt-2 clearfix">
+            <div class="col-7">
+                Tổng: <strong class="float-right" style="color:#ee4d2d">
+                    @Tong.ToString("N0")₫
+                </strong>
+            </div>
+            <div class="col-5">
+                <div class="m-0 px-2 btn btn-primary btn-sm float-right">
+                    <a href="~/gio-hang" class="text-white text-decoration-none">
+                        Thanh toán
+                    </a>
+                </div>
+            </div>
+        </div>
+    </ul>
+}
+else
+{
+    <div class="t">
+        <img src="~/Public/images/null.png" alt="Trống" width="100">
+        <div class="pb-5 font-weight-bold" style="opacity: .6;">
+            Giỏ hàng của bạn trống
+        </div>
+    </div>
+}

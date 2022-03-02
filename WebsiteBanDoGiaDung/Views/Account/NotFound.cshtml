@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Đơn hàng không tồn tại!";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div class="container-91 text-center my-5 py-5" style="min-height:500px">
+    <h2>Đơn hàng không tồn tại</h2>
+    <small class="text-secondary">Xin lỗi, chúng tôi không tìm thấy đơn hàng này</small>
+    <a href="javascript:void(0)" onClick="history.go(-1)" class="text-decoration-none d-block text-dark my-4 count-b">Quay lại trang trước sau 5s</a>
+    <div style="width:70px;border-bottom:3px solid #333;" class="m-auto"></div>
+</div>
+
+<script>
+    setTimeout(function () {
+        history.go(-1);
+    }, 5000);
+</script>

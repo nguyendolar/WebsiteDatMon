@@ -1,0 +1,198 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MOrderDetail>
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+
+<div style="background:#f5f5f5; min-height:32rem">
+    <div class="container-91 mx-auto">
+        <div class="row">
+            <div class="col-3 mt-5">
+                <div class="">
+                    <div class="float-left">
+                        @*<img src="images/boxed-bg.png" ralt="" width="50"
+                             class="rounded-circle">*@
+                    </div>
+                    <div class="float-left pl-3 border-bottom">
+                        <small class="font-weight-bold"> @Session["User_Name"]</small><br>
+                        
+                    </div>
+                </div>
+                <br>
+                <div style="clear:both"></div>
+                <div class="mt-4 pl-3">
+                    <ul class="nav flex-column">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" href="~/account/order" style="font-size: 14px;">
+                                <i class="far fa-file-alt"></i>
+                                &nbsp Đơn mua
+                            </a>
+                        </li>
+                        
+                        
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-9 bg- mt-3" style="width:50rem; margin-left:-50px">
+
+                <div class="mt-2" style="background-color: white;">
+                    <div class="row mx-2">
+                        <div class="col-6">
+                            <a href="javascript:void(0)" onClick="history.go(-1)">
+                                <small class="text-secondary d-inline-block pt-3 pl-3">~Trở lại</small>
+                            </a>
+                        </div>
+                       
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <p class="border-m "></p>
+                        </div>
+                        <div class="col-12 mx-3 pb-3">
+                            <div class="h5" style="text-decoration:underline">Thông tin nhận hàng</div>
+                            <table class="small my-2">
+                                <tr>
+                                    <td style="width:12rem" class="text-secondary">Họ tên</td>
+                                    <td>@ViewBag.Order.DeliveryName</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-secondary">Số điện thoại</td>
+                                    <td>@ViewBag.Order.DeliveryPhone</td>
+                                </tr>
+                               
+                            </table>
+                        </div>
+                        <div class="col-12 mt-3">
+                            <p class="border-m "></p>
+                        </div>
+                    </div>
+
+                    <div class=" mb-3" style="background-color: ;">
+
+                        @{double Tong = 0; }
+                        @foreach (var t in Model)
+                        {
+                            foreach (var p in ViewBag.productOrder)
+                            {
+                                if (p.ID == t.ProductID)
+                                {
+                                    Tong += t.Amount;
+                                    <div class="row border-bottom mx-2 py-3">
+                                        <div class="col-1"></div>
+                                        <div class="col-2">
+                                            <div class="vertical-center">
+                                                <img class="d-block mx-auto" src="~/Public/images/products/@p.Image" width="100">
+                                            </div>
+
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="card-body my-0">
+                                                <div class="card-text text-dark">
+                                                    <a href="~/@p.Slug  " class="text-decoration-none text-dark">
+                                                        @p.Name
+                                                    </a>
+                                                </div>
+                                                <small class="text-dark">x @t.Quantity</small>
+                                                <p class="card-text">
+                                                    <small class="text-muted"></small>
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-2 mt-5">
+                                            <small class="text-dark">
+                                                @String.Format("{0:0,0₫}", t.Price)
+                                            </small>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+
+
+                        <div class="row mb-3">
+                            <div class="col-12 mb-2">
+                                <div class="row mx-2" style="background:#fdfdfd">
+                                    <div class="col-9 border border-top-0  border-left-0">
+                                        <small class="text-secondary text-right d-block py-3">
+                                            Tổng tiền hàng
+                                        </small>
+                                    </div>
+                                    <div class="col-3 border border-top-0 border-left-0 border-right-0 py-3">
+                                        <small class="text-dark text-right d-block pr-5">
+                                            @String.Format("{0:0,0₫}", Tong)
+                                        </small>
+                                    </div>
+                                    <!---->
+                                    <div class="col-9 border border-left-0 border-top-0">
+                                        <small class="text-secondary text-right d-block py-3">Phí vận chuyển</small>
+                                    </div>
+                                    <div class="col-3 border border-left-0 border-right-0 border-top-0 py-3">
+                                        <small class="text-dark text-right d-block pr-5">
+                                            @String.Format("{0:0₫}", 0)
+                                        </small>
+                                    </div>
+                                    <!---->
+                                    <div class="col-9 border border-left-0 border-top-0">
+                                        <small class="text-secondary text-right d-block py-3"> Tổng số tiền</small>
+                                    </div>
+                                    <div class="col-3 border border-left-0 border-right-0 border-top-0 py-3">
+                                        <small class="text-right d-block pr-5 h4" style="color:#ee4d2d">
+                                            @String.Format("{0:0,0₫}", Tong)
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-5">
+                                <small class='text-secondary pl-3'>Ngày đặt hàng : @i.CreateDate</small>
+                            </div>
+                            <div class="col-7 pt-2 pb-3">
+                                <small class="text-right mr-3 d-block">
+                                    Thanh toán khi nhận hàng
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    #listtab-order .active {
+        border-bottom: 3px solid #ee4d2d;
+        background: #fff;
+        color: #ee4d2d;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .list-group-item {
+        border-bottom: 1px solid #eee;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+    }
+
+    .border-m {
+        height: .1875rem;
+        width: 100%;
+        background-position-x: -1.875rem;
+        background-size: 7.25rem .1875rem;
+        background-image: repeating-linear-gradient(45deg,#6fa6d6,#6fa6d6 33px,transparent 0,transparent 41px,#f18d9b 0,#f18d9b 74px,transparent 0,transparent 82px);
+    }
+
+    .vertical-center {
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+</style>
+

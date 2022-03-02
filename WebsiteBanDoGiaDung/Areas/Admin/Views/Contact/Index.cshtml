@@ -1,0 +1,88 @@
+﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MContact>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+@Html.Partial("_MessageAlert")
+<section class="content py-2">
+    <div class="container-fluid">
+        <!--Content-->
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-8">
+                        <h5 class="text-csm">@ViewBag.Title</h5>
+                    </div>
+                    <div class="col-4">
+                        <div class="float-right pt-1">
+
+                            <button type="button" class="btn btn-danger btn-sm">
+                                <a href="~/Admin/Contact/Trash" class="text-white"><i class="far fa-trash-alt fa-xs"></i>&nbsp; Thùng rác(@(ViewBag.countTrash??"?"))</a>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                <table id="product" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th class="no-sort text-center" style="width:3rem;">ID</th>
+                            @*<th class="no-sort">Tên khách hàng</th>*@
+                            <th class="no-sort">Tiêu đề liên hệ</th>
+                            <th class="no-sort">Email</th>
+                            <th class="no-sort">Điện thoại</th>
+
+
+                            <th class="no-sort text-center" style="width:10rem">Trạng thái</th>
+                            <th class="no-sort text-center" style="width:10rem">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+            <tr>
+                <td class="text-center">@Html.DisplayFor(modelItem => item.ID)</td>
+                <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                <td>0@(Html.DisplayFor(modelItem => item.Phone))</td>
+
+                <td class="text-center">
+
+                    @if (item.Flag == 1)
+                    {
+    <span class="badge badge-secondary">
+        Đã trả lời
+    </span> }
+                    else
+                    {
+    <span class="badge badge-success">
+        Chưa trả lời
+    </span>}
+
+                </td>
+                <td class="text-center">
+                    @if (item.Flag == 1)
+                    {
+    <a class="btn btn-secondary btn-sm" href="@Url.Action("Reply", "Contact", new { id = item.ID })" data-toggle="tooltip" data-placement="top" title="Xem">
+        Đã trả lời
+    </a> }
+                    else
+                    {
+    <a class="btn btn-info btn-sm" href="@Url.Action("Reply", "Contact", new { id = item.ID })" data-toggle="tooltip" data-placement="top" title="Trả lời @Html.DisplayFor(modelItem => item.Fullname)">
+        <i class="fas fa-edit"></i> Trả lời
+    </a>}
+                    <button type="button" class="btn btn-danger btn-sm" data-toggle="tooltip" data-placement="top" title="Xóa liên hệ">
+                        <a href="@Url.Action("DelTrash", "Contact", new { id = item.ID })" class="text-white"><i class="far fa-trash-alt"></i></a>
+                    </button>
+                </td>
+            </tr>}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
