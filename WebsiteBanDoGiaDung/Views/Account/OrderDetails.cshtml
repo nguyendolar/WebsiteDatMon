@@ -145,12 +145,32 @@
                                 </div>
                             </div>
                             <div class="col-5">
-                                <small class='text-secondary pl-3'>Ngày đặt hàng : @i.CreateDate</small>
+                              @*  <small class='text-secondary pl-3'>Ngày đặt hàng : @i.CreateDate</small>*@
                             </div>
                             <div class="col-7 pt-2 pb-3">
-                                <small class="text-right mr-3 d-block">
-                                    Thanh toán khi nhận hàng
+                                @if (ViewBag.Order.Status == 0)
+                                {
+                                <small style="color:red" class="text-right mr-3 d-block">
+                                    Đã hủy
                                 </small>
+                                }
+                                else
+                                {
+                                    if (ViewBag.Order.IsPayment == true)
+                                    {
+                                        <small style="color:forestgreen" class="text-right mr-3 d-block">
+                                            Đã thanh toán qua MoMo
+                                        </small>
+                                    }
+                                    else
+                                    {
+                                        <small class="text-right mr-3 d-block">
+                                            Thanh toán khi nhận hàng
+                                        </small>
+                                    }
+                                }
+                               
+
                             </div>
                         </div>
                     </div>

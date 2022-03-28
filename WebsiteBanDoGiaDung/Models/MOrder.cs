@@ -22,8 +22,8 @@ using System.Web;
         public string DeliveryName { get; set; }
         public string DeliveryPhone { get; set; }
         public string DeliveryEmail { get; set; }
-
         public int? Status { get; set; }
+        public bool IsPayment { get; set; }
         public int? Trash { get; set; }
         public DateTime? Updated_at { get; set; }
         public int? Updated_by { get; set; }

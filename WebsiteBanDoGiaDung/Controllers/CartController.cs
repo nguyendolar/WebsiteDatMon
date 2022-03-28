@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using WebsiteBanDoGiaDung.Library;
 using WebsiteBanDoGiaDung.Models;
+using MoMo.MoMoSecurity;
+using MoMo.PaymentRequest;
 
 namespace WebsiteBanDoGiaDung.Controllers
 {
@@ -120,6 +122,7 @@ namespace WebsiteBanDoGiaDung.Controllers
         {
             var order = new MOrder();
             int user_id = Convert.ToInt32(Session["User_ID"]);
+
             order.Code = DateTime.Now.ToString("yyyyMMddhhMMss"); // yyyy-MM-dd hh:MM:ss
             order.UserID = user_id;
             order.CreateDate = DateTime.Now;
@@ -128,9 +131,10 @@ namespace WebsiteBanDoGiaDung.Controllers
             order.DeliveryPhone = Phone;
             order.DeliveryName = FullName;
             order.Status = 1;
+            order.IsPayment = false;
             db.Orders.Add(order);
             db.SaveChanges();
-
+             
             var OrderID = order.ID;
 
             foreach (var c in (List<ModelCart>)Session["Cart"])
@@ -162,6 +166,94 @@ namespace WebsiteBanDoGiaDung.Controllers
             if (Session["User_Name"] != null)
                 return Json(1);
             return Json(0);
+        }
+
+        public ActionResult PaymentMoMo(int id)
+        {
+            var obj = db.Orders.Where(x => x.ID == id).FirstOrDefault();
+            var listObjDetail = db.Orderdetails.Where(x => x.OrderID == id).ToList();
+            double total = 0;
+            foreach (var item in listObjDetail)
+            {
+                total += item.Quantity * item.Amount;
+            }   
+            //request params need to request to MoMo system
+            string endpoint = "https://test-payment.momo.vn/gw_payment/transactionProcessor";
+            string partnerCode = "MOMOOJOI20210710";
+            string accessKey = "iPXneGmrJH0G8FOP";
+            string serectkey = "sFcbSGRSJjwGxwhhcEktCHWYUuTuPNDB";
+            string orderInfo = "Thanh toán cho đơn hàng tại web";
+            string returnUrl = "https://localhost:44357/account/order";
+            string notifyurl = "http://ba1adf48beba.ngrok.io/Home/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
+
+            string amount = total.ToString();
+            string orderid = DateTime.Now.Ticks.ToString();
+            string requestId = DateTime.Now.Ticks.ToString();
+            string extraData = "";
+
+            //Before sign HMAC SHA256 signature
+            string rawHash = "partnerCode=" +
+                partnerCode + "&accessKey=" +
+                accessKey + "&requestId=" +
+                requestId + "&amount=" +
+                amount + "&orderId=" +
+                orderid + "&orderInfo=" +
+                orderInfo + "&returnUrl=" +
+                returnUrl + "&notifyUrl=" +
+                notifyurl + "&extraData=" +
+                extraData;
+
+            MoMoSecurity crypto = new MoMoSecurity();
+            //sign signature SHA256
+            string signature = crypto.signSHA256(rawHash, serectkey);
+
+            //build body json request
+            JObject message = new JObject
+            {
+                { "partnerCode", partnerCode },
+                { "accessKey", accessKey },
+                { "requestId", requestId },
+                { "amount", amount },
+                { "orderId", orderid },
+                { "orderInfo", orderInfo },
+                { "returnUrl", returnUrl },
+                { "notifyUrl", notifyurl },
+                { "extraData", extraData },
+                { "requestType", "captureMoMoWallet" },
+                { "signature", signature }
+
+            };
+
+            string responseFromMomo = PaymentRequest.sendPaymentRequest(endpoint, message.ToString());
+
+            JObject jmessage = JObject.Parse(responseFromMomo);
+
+            obj.IsPayment = true;
+            db.SaveChanges();
+            return Redirect(jmessage.GetValue("payUrl").ToString());
+        }
+
+        //Khi thanh toán xong ở cổng thanh toán Momo, Momo sẽ trả về một số thông tin, trong đó có errorCode để check thông tin thanh toán
+        //errorCode = 0 : thanh toán thành công (Request.QueryString["errorCode"])
+        //Tham khảo bảng mã lỗi tại: https://developers.momo.vn/#/docs/aio/?id=b%e1%ba%a3ng-m%c3%a3-l%e1%bb%97i
+        public ActionResult ConfirmPaymentClient()
+        {
+            //hiển thị thông báo cho người dùng
+            return View();
+        }
+
+        [HttpPost]
+        public void SavePayment()
+        {
+            //cập nhật dữ liệu vào db
+        }
+
+        public ActionResult CancelOrder(int id)
+        {
+            var obj = db.Orders.FirstOrDefault(x => x.ID == id);
+            obj.Status = 0;
+            db.SaveChanges();
+            return RedirectToAction("Order", "Account");
         }
     }
 }

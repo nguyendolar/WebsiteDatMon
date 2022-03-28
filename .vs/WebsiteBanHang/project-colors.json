@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "77fa8ab9-6a6e-4d13-a733-98fb2d21f85f": {
+      "ProjectGuid": "77fa8ab9-6a6e-4d13-a733-98fb2d21f85f",
+      "DisplayName": "WebsiteBanHang",
+      "ColorIndex": 0
+    },
+    "ee8ae108-ce9c-4f9c-a135-c7f3bfb8a36a": {
+      "ProjectGuid": "ee8ae108-ce9c-4f9c-a135-c7f3bfb8a36a",
+      "DisplayName": "MoMo",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

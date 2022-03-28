@@ -64,3 +64,275 @@ D:\Freelancer\Webdatmon\webdatmon - Copy\WebsiteBanDoGiaDung\obj\Debug\WebsiteBa
 D:\Freelancer\Webdatmon\webdatmon - Copy\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.CopyComplete
 D:\Freelancer\Webdatmon\webdatmon - Copy\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.dll
 D:\Freelancer\Webdatmon\webdatmon - Copy\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.pdb
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebsiteBanDoGiaDung.dll.config
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebsiteBanDoGiaDung.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebsiteBanDoGiaDung.pdb
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csc.exe
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csc.exe.config
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csc.rsp
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csi.exe
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csi.rsp
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.AppContext.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.Collections.Immutable.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.IO.FileSystem.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.Reflection.Metadata.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\vbc.exe
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\vbc.exe.config
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\vbc.rsp
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\VBCSCompiler.exe
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\VBCSCompiler.exe.config
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.SqlServer.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.Web.Infrastructure.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.Mvc.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Helpers.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Mvc.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Razor.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Deployment.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Razor.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.SqlServer.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.Mvc.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Razor.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Deployment.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Razor.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Helpers.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Mvc.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.AssemblyReference.cache
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.InitialCreate.resources
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.updatedb.resources
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.addfielduser.resources
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.updatedb2.resources
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.GenerateResource.cache
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.CoreCompileInputs.cache
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.CopyComplete
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.pdb
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Antlr3.Runtime.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.Http.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\MoMo.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Momo.Tokens.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\MtnMomo.NET.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\NBitcoin.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Newtonsoft.Json.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Buffers.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebGrease.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Optimization.dll
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\MoMo.pdb
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\MoMo.dll.config
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Antlr3.Runtime.pdb
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.Http.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\NBitcoin.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Newtonsoft.Json.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Buffers.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Optimization.xml
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.a.resources
+D:\Folder all\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations._new.resources
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebsiteBanDoGiaDung.dll.config
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebsiteBanDoGiaDung.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebsiteBanDoGiaDung.pdb
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csc.exe
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csc.exe.config
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csc.rsp
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csi.exe
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\csi.rsp
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.AppContext.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\vbc.exe
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\vbc.exe.config
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\vbc.rsp
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\VBCSCompiler.exe
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.Win32.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\netstandard.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.AppContext.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Collections.Concurrent.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Collections.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Collections.NonGeneric.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Collections.Specialized.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.ComponentModel.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.ComponentModel.EventBasedAsync.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.ComponentModel.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.ComponentModel.TypeConverter.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Console.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Data.Common.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.Contracts.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.Debug.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.Process.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.StackTrace.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.Tools.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.TraceSource.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Diagnostics.Tracing.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Drawing.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Dynamic.Runtime.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Globalization.Calendars.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Globalization.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Globalization.Extensions.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.Compression.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.Compression.ZipFile.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.FileSystem.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.FileSystem.DriveInfo.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.FileSystem.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.FileSystem.Watcher.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.IsolatedStorage.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.MemoryMappedFiles.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.Pipes.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.IO.UnmanagedMemoryStream.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Linq.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Linq.Expressions.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Linq.Parallel.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Linq.Queryable.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.Http.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.NameResolution.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.NetworkInformation.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.Ping.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.Requests.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.Security.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.Sockets.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.WebHeaderCollection.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.WebSockets.Client.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Net.WebSockets.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.ObjectModel.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Reflection.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Reflection.Extensions.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Reflection.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Resources.Reader.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Resources.ResourceManager.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Resources.Writer.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.Extensions.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.Handles.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.InteropServices.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.Numerics.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.Serialization.Formatters.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.Serialization.Json.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.Serialization.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Runtime.Serialization.Xml.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.Claims.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.Cryptography.Algorithms.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.Cryptography.Csp.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.Cryptography.Encoding.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.Cryptography.Primitives.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.Principal.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Security.SecureString.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Text.Encoding.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Text.Encoding.Extensions.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Text.RegularExpressions.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Threading.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Threading.Overlapped.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Threading.Tasks.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Threading.Tasks.Parallel.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Threading.Thread.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Threading.ThreadPool.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Threading.Timer.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.ValueTuple.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Xml.ReaderWriter.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Xml.XDocument.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Xml.XmlDocument.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Xml.XmlSerializer.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Xml.XPath.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Xml.XPath.XDocument.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Antlr3.Runtime.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.Http.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\MoMo.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Newtonsoft.Json.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.Mvc.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Buffers.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Helpers.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Mvc.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Razor.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Deployment.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Razor.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\WebGrease.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Optimization.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\MoMo.pdb
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\MoMo.dll.config
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Antlr3.Runtime.pdb
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Flurl.Http.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\Newtonsoft.Json.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\PagedList.Mvc.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Buffers.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Razor.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Deployment.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Webpages.Razor.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Helpers.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Mvc.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\bin\System.Web.Optimization.xml
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.InitialCreate.resources
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.updatedb.resources
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.addfielduser.resources
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.updatedb2.resources
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations.a.resources
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.Migrations._new.resources
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.GenerateResource.cache
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanHang.csproj.CopyComplete
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.dll
+C:\Users\ADMIN\Desktop\WebsiteDatMon\WebsiteDatMon\WebsiteBanDoGiaDung\obj\Debug\WebsiteBanDoGiaDung.pdb

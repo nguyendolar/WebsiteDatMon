@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Đề xuất địa điểm gần nhất";
+    Layout = "~/Views/Shared/_LayoutSite.cshtml";
+}
+<main >
+    <div class="container">
+        <div class="row" style="margin-top:20px">
+            <div class="col-4">
+                <button style="margin-top: 10px; width: 50%;margin-left:5px;  height: 42px; border : 0; background-color: red; color: #fff; font-size: 14px" onclick="getLocation()">Lấy vị trí</button>
+                <p style="margin-top:5px" id="demo"></p>
+                <form action="/Recommend/GetAddress" method="post">
+                    <button id="buttonDe" style="display:none; margin-top: 10px; width: 50%;margin-left:5px;  height: 42px; border : 0; background-color: #4a90e2; color: #fff; font-size: 14px" onclick="getLocation()">Xem đề xuất</button>
+                    <input type="hidden" id="longTi" name="longTi" />
+                    <input type="hidden" id="lat" name="lat" />
+                </form>              
+            </div>
+            <div class="col-8">
+                @if (ViewBag.Mes == null)
+                {
+                    <h2 style="margin-left:50px">Danh sách chi nhánh của hệ thống</h2>
+                    foreach (var item in ViewBag.Location)
+                    {
+                        <div class="row" style="margin-bottom:10px">
+                            <div class="col-2">
+                                <img style="width:90px;height:90px;border-radius:50%;margin-right:10px" src="https://i.pinimg.com/474x/d5/bd/4c/d5bd4c5e6a67580ba6eb3dd362626aa3.jpg" />
+                            </div>
+                            <div class="col-10">
+                                <h5>@item.Name</h5>
+                                <span style="font-weight:bold">Kịnh độ: </span><span>@item.Longiude</span>  <span style="font-weight:bold"> - Vĩ độ: </span><span>@item.Latitude</span>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <h2 style="margin-left:50px">Danh sách chi nhánh sắp xếp gần nhất với bạn</h2>
+                    foreach (var item in ViewBag.data)
+                    {
+                        <div class="row" style="margin-bottom:10px">
+                            <div class="col-2">
+                                <img style="width:90px;height:90px;border-radius:50%;margin-right:10px" src="https://i.pinimg.com/474x/d5/bd/4c/d5bd4c5e6a67580ba6eb3dd362626aa3.jpg" />
+                            </div>
+                            <div class="col-10">
+                                <h5>@item.Name</h5>
+                                <span style="font-weight:bold">Cách vị trí bạn: </span><span>@item.Distance km</span>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+    <script>
+        var x = document.getElementById("demo");
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation không được hỗ trợ bởi trình duyệt này.";
+            }
+            document.getElementById("buttonDe").style.display = 'block';
+           
+        }
+        function showPosition(position) {
+            x.innerHTML = "Vĩ độ: " + position.coords.latitude +
+                "<br>Kinh độ: " + position.coords.longitude;
+            document.getElementById('longTi').value = position.coords.longitude;
+            document.getElementById('lat').value = position.coords.latitude;
+        }
+    </script>
+</main>
+

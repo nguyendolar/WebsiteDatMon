@@ -48,6 +48,11 @@ namespace WebsiteBanDoGiaDung
                 defaults: new { controller = "Site", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
+               name: "Recommend",
+               url: "gioi-thieu/{longTi}/{lat}",
+               defaults: new { controller = "Recommend", action = "GetAddress", id = UrlParameter.Optional }
+           );
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Site", action = "Index", id = UrlParameter.Optional }

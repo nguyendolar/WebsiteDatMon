@@ -55,15 +55,20 @@
                     <div class="col-6 text-right  my-2 pt-2 ">
                         <small class="d-inline text-secondary">Trạng thái |</small>
                         <div class="d-inline pr-3 text-uppercase" style="color:#ee4d2d; font-size:14px">
-                            @{ if (i.Status == 1)
+                            @if (i.Status == 1)
                                 {
-                <span>Chờ xử lý</span> }
-            else if (i.Status == 2)
-            {
-<span>Đang xử lý</span> }
-else
-{
-<span>Hoàn thành</span> } }
+                                    <span>Chờ xử lý</span> }
+                                else if (i.Status == 2)
+                                {
+                                    <span>Đang xử lý</span> }
+                                else if (i.Status == 0)
+                                {
+                                    <span>Đã hủy</span> }
+                                else
+                                {
+                                    <span>Hoàn thành</span>
+                                }
+                            
                         </div>
                     </div>
                 </div>
@@ -75,17 +80,17 @@ else
                         if (i.ID == v.OrderID)
                         {
                             Total += v.Price * v.Quantity;
-    <div class="row my-3 pb-3 mx-2" style="border-bottom:1px solid #eee">
+                        <div class="row my-3 pb-3 mx-2" style="border-bottom:1px solid #eee">
 
-        @foreach (var p in ViewBag.productOrder)
-        {
-            if (p.ID == v.ProductID)
-            {
-<div class="col-2">
-    <div class="vertical-center">
-        <img class="d-block mx-auto" src="~/Public/images/products/@p.Image" width="100">
-    </div>
-</div>
+                            @foreach (var p in ViewBag.productOrder)
+                            {
+                                if (p.ID == v.ProductID)
+                                {
+                    <div class="col-2">
+                        <div class="vertical-center">
+                            <img class="d-block mx-auto" src="~/Public/images/products/@p.Image" width="100">
+                        </div>
+                    </div>
                                 <div class="col-8">
                                     <div class="card-body my-0">
                                         <div class="card-text text-dark">
@@ -123,15 +128,42 @@ else
                     </div>
                     <div class="col-7 pt-2 pb-3">
                         <div class="text-right mr-3">
-                            
+
                             <button style="border:1px solid #ccc" class="btn rounded-0 py-2 ml-2">
+
                                 <small>
                                     <a href="~/account/orderdetails/@i.ID"
                                        class="text-dark text-decoration-none py-3 px-5">
                                         Chi tiết đơn hàng
                                     </a>
+
+
                                 </small>
+                                @if (!i.IsPayment)
+                                {
+                                    if (i.Status == 1)
+                                    {
+                                        <button type="button" style="margin-top: 10px; width: 50%;margin-left:5px;  height: 42px; border : 0; background-color: red; color: #fff; font-size: 14px">
+                                            <a href="@Url.Action("CancelOrder","Cart",new { id = i.ID })" class="text-white text-decoration-none"> Hủy đơn hàng</a>
+                                        </button>
+                                    }
+                                }
                             </button>
+                            @if (i.IsPayment)
+                            {
+                                <p style="color:forestgreen;margin-top:10px">Đã thanh toán</p>
+                            }
+                            else
+                            {
+                                if (i.Status != 0)
+                                {
+                                    <button type="button" style="margin-top: 10px; width: 50%;margin-left:5px;  height: 42px; border : 0; background-color: #C71585; color: #fff; font-size: 14px">
+                                        <a href="@Url.Action("PaymentMoMo","Cart",new { id = i.ID })" class="text-white text-decoration-none"> Thanh toán MoMo</a>
+                                    </button>
+
+                                }
+
+                            }
                         </div>
                     </div>
                 </div>
