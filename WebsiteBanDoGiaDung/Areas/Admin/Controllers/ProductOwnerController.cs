@@ -56,11 +56,11 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
                 MProductOwner.Updated_by = int.Parse(Session["Admin_ID"].ToString());
                 db.ProductOwners.Add(MProductOwner);
                 db.SaveChanges();
-                Notification.set_flash("Nhà cung cấp đã được thêm!", "success");
+                Notification.set_flash("Chi nhánh đã được thêm!", "success");
                 return RedirectToAction("Index", "ProductOwner");
             }
 
-            Notification.set_flash("Có lỗi xảy ra khi thêm nhà cung cấp!", "warning");
+            Notification.set_flash("Có lỗi xảy ra khi thêm chi nhánh!", "warning");
             return View(MProductOwner);
         }
 
@@ -154,13 +154,13 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
         {
             if (id == null)
             {
-                Notification.set_flash("Không tồn tại nhà cung cấp cần xóa!", "warning");
+                Notification.set_flash("Không tồn tại chi nhánh cần xóa!", "warning");
                 return RedirectToAction("Trash", "ProductOwner");
             }
             MProductOwner MProductOwner = db.ProductOwners.Find(id);
             if (MProductOwner == null)
             {
-                Notification.set_flash("Không tồn tại nhà cung cấp cần xóa!", "warning");
+                Notification.set_flash("Không tồn tại chi nhánh cần xóa!", "warning");
                 return RedirectToAction("Trash", "ProductOwner");
             }
             return View(MProductOwner);
@@ -173,7 +173,7 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
             MProductOwner MProductOwner = db.ProductOwners.Find(id);
             db.ProductOwners.Remove(MProductOwner);
             db.SaveChanges();
-            Notification.set_flash("Đã xóa hoàn toàn nhà cung cấp!", "success");
+            Notification.set_flash("Đã xóa hoàn toàn chi nhánh!", "success");
             return RedirectToAction("Trash", "ProductOwner");
         }
 

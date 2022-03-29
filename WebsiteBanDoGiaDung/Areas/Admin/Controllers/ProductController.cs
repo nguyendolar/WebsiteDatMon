@@ -85,13 +85,18 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
         public ActionResult Create(MProduct mProduct)
         {
             ViewBag.ListCat = new SelectList(db.Categorys.Where(m => m.Status != 0), "ID", "Name", 0);
-            if (ModelState.IsValid)
-            {
-                mProduct.Price = mProduct.Price + 500000;
-                mProduct.ProPrice = mProduct.ProPrice + 500000;
+            
+                mProduct.Price = mProduct.Price;
+                mProduct.ProPrice = mProduct.ProPrice;
 
                 String strSlug = XString.ToAscii(mProduct.Name);
                 mProduct.Slug = strSlug;
+                mProduct.NewPromotion = "Khuyến mãi";
+                mProduct.Specification = "Đặt món";
+                mProduct.MetaKey = "Đặt món";
+                mProduct.MetaDesc = "Đặt món";
+                mProduct.Discount = 2;
+                mProduct.Installment = 2;
                 mProduct.Created_at = DateTime.Now;
                 mProduct.Created_by = 1;
                 mProduct.Updated_at = DateTime.Now;
@@ -111,8 +116,6 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
                 db.SaveChanges();
                 Notification.set_flash("Thêm mới sản phẩm thành công!", "success");
                 return RedirectToAction("Index");
-            }
-            return View(mProduct);
         }
 
         public ActionResult Edit(int? id)
@@ -134,11 +137,14 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
         {
             ViewBag.ListCat = new SelectList(db.Categorys.Where(x => x.Status != 0).ToList(), "ID", "Name", 0);
             ViewBag.ListOwner = new SelectList(db.ProductOwners.Where(x => x.Status != 0).ToList(), "ID", "Name", 0);
-            if (ModelState.IsValid)
-            {
                 String strSlug = XString.ToAscii(mProduct.Name);
                 mProduct.Slug = strSlug;
-
+                mProduct.NewPromotion = "Khuyến mãi";
+                mProduct.Specification = "Đặt món";
+                mProduct.MetaKey = "Đặt món";
+                mProduct.MetaDesc = "Đặt món";
+                mProduct.Discount = 2;
+                mProduct.Installment = 2;
                 mProduct.Updated_at = DateTime.Now;
                 mProduct.Updated_by = 1;
 
@@ -156,8 +162,6 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
                 db.SaveChanges();
                 Notification.set_flash("Đã cập nhật lại thông tin sản phẩm!", "success");
                 return RedirectToAction("Index");
-            }
-            return View(mProduct);
         }
 
         public ActionResult DelTrash(int? id)

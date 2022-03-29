@@ -132,6 +132,7 @@ namespace WebsiteBanDoGiaDung.Controllers
                 user.Gender = 1;
                 user.Image = "";
                 user.Access = 0;
+                user.GroupId = 7;
                 user.Status = 1;
                 user.Password = XString.ToMD5(user.Password);
                 user.Created_at = DateTime.Now;

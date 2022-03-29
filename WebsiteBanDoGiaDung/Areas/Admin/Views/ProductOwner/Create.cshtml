@@ -38,13 +38,24 @@
                         <div class="col-md-9">
                             <div class="form-horizontal">
 
-
                                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
                                 <div class="form-group">
-                                    <label class="control-label col-md-4">Tên nhà cung cấp</label>
+                                    <label class="control-label col-md-4">Tên chi nhánh</label>
                                     @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Kinh độ</label>
+                                    @Html.TextBoxFor(model => model.Longiude, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Longiude, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Vĩ độ</label>
+                                    @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
 
                                 </div>
 

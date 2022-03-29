@@ -142,6 +142,25 @@
                                             @String.Format("{0:0,0₫}", Tong)
                                         </small>
                                     </div>
+                                    <!---->
+                                    <div class="col-9 border border-left-0 border-top-0">
+                                        <small class="text-secondary text-right d-block py-3"> Trạng thái đơn hàng</small>
+                                    </div>
+                                    <div class="col-3 border border-left-0 border-right-0 border-top-0 py-3">
+                                        <div id="id_qrcode"></div>
+                                        @if (ViewBag.Order.Status == 1)
+                                        {
+                                            <input id="textqr" type="hidden" value="Dang xu ly" />
+                                        }
+                                        else if (ViewBag.Order.Status == 2)
+                                        {
+                                            <input id="textqr" type="hidden" value="Dang giao hang" />
+                                        }
+                                        else if (ViewBag.Order.Status == 3)
+                                        {
+                                            <input id="textqr" type="hidden" value="Da giao hang" />
+                                        }
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-5">
@@ -181,7 +200,19 @@
 
     </div>
 </div>
-
+<script type="text/javascript">
+    function onReady() {
+        var elText = document.getElementById("textqr").value;
+        var qrcode = new QRCode("id_qrcode", {
+            text: elText.toString(),
+            width: 150,
+            height: 150,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+    }
+</script>
 <style>
     #listtab-order .active {
         border-bottom: 3px solid #ee4d2d;

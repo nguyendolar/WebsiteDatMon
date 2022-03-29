@@ -55,13 +55,13 @@
                             data-target="#modal-secondary">
                         @if (c.Status == 1)
                         {
-        <small class="badge badge-secondary ba@(c.ID)"> Chờ xử lý</small> }
+        <small class="badge badge-secondary ba@(c.ID)"> Đang xử lý</small> }
                         else if (c.Status == 2)
                         {
-        <small class="badge badge-info ba@(c.ID)">Đang xử lý</small> }
+        <small class="badge badge-info ba@(c.ID)">Đang giao hàng</small> }
                         else
                         {
-        <small class="badge badge-danger ba@(c.ID)">Hoàn thành</small>}
+        <small class="badge badge-danger ba@(c.ID)">Đã giao hàng</small>}
 
                     </button>
                 </td>
@@ -113,9 +113,9 @@
                     <div class="col-5 text-right">Trạng thái đơn hàng</div>
                     <div class="col-7">
                         <select class="form-control" id="optionStatus">
-                            <option value="1">Chờ Xử Lý</option>
-                            <option value="2">Đang xử lý</option>
-                            <option value="3">Hoàn thành</option>
+                            <option value="1">Đang Xử Lý</option>
+                            <option value="2">Đang giao hàng</option>
+                            <option value="3">Đã giao hàng</option>
                         </select>
                     </div>
 

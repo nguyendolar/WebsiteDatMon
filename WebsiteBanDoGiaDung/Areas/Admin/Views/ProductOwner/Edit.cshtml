@@ -45,9 +45,21 @@
                                 @Html.HiddenFor(model => model.Created_at)
                                 @Html.HiddenFor(model => model.Created_by)
                                 <div class="form-group">
-                                    <label class="control-label col-md-4">Tên nhà cung cấp</label>
-                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control"})
+                                    <label class="control-label col-md-4">Tên chi nhánh</label>
+                                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Kinh độ</label>
+                                    @Html.TextBoxFor(model => model.Longiude, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Longiude, "", new { @class = "text-danger" })
+
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label col-md-4">Vĩ độ</label>
+                                    @Html.TextBoxFor(model => model.Latitude, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Latitude, "", new { @class = "text-danger" })
 
                                 </div>
 

@@ -275,6 +275,7 @@
     <Content Include="Public\js\jquery-3.5.1.slim.min.js" />
     <Content Include="Public\js\owl.carousel.js" />
     <Content Include="Public\js\popper.min.js" />
+    <Content Include="Public\js\qrcode.min.js" />
     <Content Include="Public\js\sweetalert2%409.js" />
     <Content Include="Public\js\target.min.js" />
     <Content Include="Scripts\bootstrap.js" />

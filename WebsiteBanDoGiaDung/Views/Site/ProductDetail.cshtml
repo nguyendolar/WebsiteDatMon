@@ -47,8 +47,7 @@
         </div>
         <div class="col-4">
 
-            @if (Model.Discount == 1)
-            {
+            
                 <div class="bao-gia clearfix">
                     <small class="d-inline float-left mt-1 text-secondary mr-2">Giá tại: <a href="javascript::void(0)" class="text-decoration-none text-info">Cửa Hàng: </a> </small>
                     <h5 class="font-weight-bold text-dark">
@@ -78,39 +77,9 @@
                         </div>
                     </div>
                 </div>
-            }
-            else
-            {
-                <div class="bao-gia clearfix">
-                    @if (Model.ProPrice == Model.Price || Model.ProPrice == 0)
-                    {
-                        <small class="d-inline float-left mt-2 text-secondary mr-2">Giá tại: <a href="javascript::void(0)" class="text-decoration-none text-info">TP.HCM: </a> </small>
-                        <div class="gia">
-                            @String.Format("{0:0,0₫}", Model.Price)
-                        </div>
-                    }
-                    else
-                    {
-                        <small class="d-inline float-left mt-2 text-secondary mr-2">Giá tại: <a href="javascript::void(0)" class="text-decoration-none text-info">TP.HCM: </a> </small>
-                        <div class="gia">
-                            @String.Format("{0:0,0₫}", Model.ProPrice)
-                        </div>
-                        <div class="gia-gach font-weight-normal text-dark">
-                            @String.Format("{0:0,0₫}", Model.Price)
-                        </div>
-                        <small class="text-danger d-inline-block my-1 mx-2">(- @String.Format("{0:0}", ((Model.Price - Model.ProPrice) / Model.Price * 100))%)</small>
-                    }
-
-
-                    @if (Model.Installment == 1)
-                    {
-                        <div style="float:right;top:-10px;right:0;background:#f28902; margin:0 0 0 15px; border-radius:4px;color:#f3f3f3; font-size:11px;width:70px;padding:0 5px; position:absolute">
-                          
-                        </div>
-                    }
-                </div>
-            }
-            @Html.Raw(Model.Specification)
+            
+            
+            @Html.Raw(Model.Detail)
             @*<div class="row my-2 border">
                 <div class="col-12 bg-light">
                     <div class="pl-3 font-weight-bold py-2 mt-2 float-left">KHUYẾN MẠI</div> <small class="float-left text-secondary pl-2 pt-3"> (Áp dụng dự kiến đến 07/07/2027)</small>
@@ -155,13 +124,13 @@
                 </div>
                 <div class="col-6">
 
-                    <div class="nut-mua">
+                    @*<div class="nut-mua">
                         <a href="thanh-toan" class="text-decoration-none text-light" data-id="<%= result.ID%>" id="add-one-p-t-c">
                             <button style="width:100%; height:49px;border:0; background:-webkit-linear-gradient(top,#f59000,#fd6e1d);color:#fff; font-size:14px">
                                 Mua ngay
                             </button>
                         </a>
-                    </div>
+                    </div>*@
 
                     @*<div class="nut-mua" data-id="<%= result.ID%>">
                             <button style="width:100%; height:49px;border:0; background:-webkit-linear-gradient(top,#f59000,#fd6e1d);
@@ -178,7 +147,7 @@
         <div class="col-3">
             <div class="border mt-4">
                 <div class="text-success font-weight-bold text-center h6 py-2 mt-2">
-                   MUA SẮM ONLINE - KHUYẾN MÃI KHỦNG
+                   MUA SẮM ONLINE - TIỆN LỢI, NHANH CHÓNG
                 </div>
                 <small class="text-secondary border-bottom d-block pl-3 py-2 mt-2">
                     <i class="fas fa-cogs fa-2x text-success pr-2"></i>
@@ -201,63 +170,10 @@
 </div>
 
 
-<div class="san-pham-cung-loai container-91">
-    <div class="title">Sản phẩm cùng loại</div>
-    <div class="taiche">
-        <div id="owl-wrap" class="owl-carousel owl-theme">
-            @foreach (var i in ViewBag.listOther)
-            {
-                <div class="p-item">
-                    <a href="~/@i.Slug">
-                        <div class="p-img">
-                            <img src="~/Public/images/products/@i.Image" alt="" class="beau">
-                            @if (i.Installment == 1)
-                            {
-                                
-                            }
-                        </div>
-                        <div class="couple">
-                            @if (i.Discount == 1)
-                            {
-                                <img src="~/Public/images/online-giảm-sốc-1x.png" alt="" class="h-100 ">
-                            }
-                        </div>
-                        <div class="p-np">
-                            @i.Name
-                        </div>
-                        <div class="p-price ">
 
-                            @if (i.ProPrice == 0 || i.ProPrice == i.Price)
-                            {
-                                <div class="price">
-                                    @String.Format("{0:0,0₫}", i.Price)
-                                </div>
-                                <div class="old-price float-left"></div>
-                            }
-                            else
-                            {
-                                <div class="price">
-                                    @String.Format("{0:0,0₫}", i.ProPrice)
-                                </div>
-                                <div class="old-price float-left">
-                                    @String.Format("{0:0,0₫}", i.Price)
-                                </div>
-                                @*<div class="khongbietdattenlagi float-left">(@((Model.Price - Model.ProPrice) / Model.Price * 100)%)</div>*@
-                            }
-                        </div>
-                    </a>
-                </div>
-            }
-
-
-
-
-        </div>
-    </div>
-</div>
 <div class="container-91 row chi-tiet-san-pham">
     <div class="col-8">
-        @Html.Raw(Model.Detail)
+        @Html.Raw(Model.Description)
         <div class="commment-fb-cus">
             <div class="fb-comments" data-href="https://localhost:44376/@Model.ID" data-numposts="5" data-width="100%"></div>
          </div>
@@ -268,7 +184,55 @@
 
     </div>*@
 </div>
+<div class="san-pham-cung-loai container-91">
+    <div class="title">Sản phẩm cùng loại</div>
+    <div class="taiche">
+        <div id="owl-wrap" class="owl-carousel owl-theme">
+            @foreach (var i in ViewBag.listOther)
+            {
+<div class="p-item">
+    <a href="~/@i.Slug">
+        <div class="p-img">
+            <img src="~/Public/images/products/@i.Image" alt="" class="beau">
+            @if (i.Installment == 1)
+            {
 
+            }
+        </div>
+        <div class="couple">
+            @if (i.Discount == 1)
+            {
+<img src="~/Public/images/online-giảm-sốc-1x.png" alt="" class="h-100 ">}
+        </div>
+        <div class="p-np">
+            @i.Name
+        </div>
+        <div class="p-price ">
+
+            @if (i.ProPrice == 0 || i.ProPrice == i.Price)
+            {
+<div class="price">
+    @String.Format("{0:0,0₫}", i.Price)
+</div>
+                    <div class="old-price float-left"></div> }
+                                    else
+                                    {
+                    <div class="price">
+                        @String.Format("{0:0,0₫}", i.ProPrice)
+                    </div>
+                                        <div class="old-price float-left">
+                                            @String.Format("{0:0,0₫}", i.Price)
+                                        </div> @*<div class="khongbietdattenlagi float-left">(@((Model.Price - Model.ProPrice) / Model.Price * 100)%)</div>*@}
+        </div>
+    </a>
+</div>            }
+
+
+
+
+        </div>
+    </div>
+</div>
 <script>
     function Cong() {
         const num = parseInt($('.etd').val());
