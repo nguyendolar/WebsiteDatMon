@@ -137,7 +137,17 @@ namespace WebsiteBanDoGiaDung.Controllers
             int pageSize = 10;
             int pageNumber = (page ?? 1);
             var list = db.Products.Where(m => m.Status == 1).OrderByDescending(m => m.Created_at).ToPagedList(pageNumber, pageSize);
+          
+            return View(list);
+        }
 
+        public ActionResult ProductById(int id,int? page)
+        {
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            var list = db.Products.Where(m => m.Status == 1 && m.OwnerId == id).OrderByDescending(m => m.Created_at).ToPagedList(pageNumber, pageSize);
+            var obj = db.ProductOwners.FirstOrDefault(x => x.Id == id);
+            ViewBag.Obj = obj;
             return View(list);
         }
         public ActionResult ProductCategory(String slug, int pageNumber)

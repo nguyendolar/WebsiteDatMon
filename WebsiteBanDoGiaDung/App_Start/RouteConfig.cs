@@ -18,6 +18,11 @@ namespace WebsiteBanDoGiaDung
                 defaults: new { controller = "Site", action = "Product", id = UrlParameter.Optional }
             );
             routes.MapRoute(
+              name: "AllProductsById",
+              url: "san-pham/{id}",
+              defaults: new { controller = "Site", action = "ProductById", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
                name: "AllPosts",
                url: "tin-tuc",
                defaults: new { controller = "Site", action = "Post", id = UrlParameter.Optional }

@@ -525,6 +525,7 @@
     <Content Include="Views\Account\_ActionOrder.cshtml" />
     <Content Include="Views\Recommend\Index.cshtml" />
     <Content Include="Views\Recommend\GetAddress.cshtml" />
+    <Content Include="Views\Site\ProductById.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
