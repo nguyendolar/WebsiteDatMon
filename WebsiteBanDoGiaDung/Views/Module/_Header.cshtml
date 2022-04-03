@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<WebsiteBanDoGiaDung.Models.MCategory>
 
 <header>
-    <div class="" style="background:rgb(29, 113, 171)">
+    <div class="" style="background-color:orangered">
         <div class="container-91 text-right">
             <small>
                 @Html.Action("MainMenu", "Module")
             </small>
         </div>
     </div>
-    <div class="wrapt">
-        <div class=" row container-91">
+    <div style="background-color:orangered" class="wrapt">
+        <div   class=" row container-91">
             <div class="col-sm-3 text-light float-left">
                 <a href="/"
                    class="d-block text-decoration-none h3 text-center pt-3 text-white font-weight-bold">
-                    Order Food Online
+                   TH Food
                 </a>
             </div>
             <div class="col-sm-5 float-left">
@@ -105,7 +105,7 @@
                     <div style="font-size:13px; color:#d0efff">Địa điểm gần nhất</div>
                 </div>
                
-                <div class="pl-5 float-left">
+                <div style="background-color:orangered" class="pl-5 float-left">
                     @*<button type="button" class="button_login" data-toggle="modal" data-target=".bd-example-modal-lg"
                     data-whatever="" data-backdrop="static" data-keyboard="false">
                 Đăng nhập,
@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    <div class="wrapb">
+    <div  class="wrapb">
         <div class="container-91">
             <div class="cate float-left p-0">
                 <a href="" class="pl-4 font-weight-bold">
@@ -133,26 +133,29 @@
                     <ul>
                         @{int i = 1; }
                         @foreach (var c in Model@*.Take(12)*@)
+{
+                        if (c.ParentID == 0)
                         {
-                            if (c.ParentID == 0)
-                            {
-                                <li>
-                                    <a href="~/@c.Slug"><i class="nicon-@i"></i> &nbsp; @c.Name</a>
-                                    <ul>
-                                        @foreach (var d in Model)
-                    {
-                        if (c.ID == d.ParentID)
-                        {
-                                                <li>
-                                                    <a href="~/@d.Slug" class="font-weight-bold">@d.Name</a>
-                                                </li>
-                                            }
+                                            <li>
+                                                <a href="~/@c.Slug"><i class="nicon-@i"></i> &nbsp; @c.Name</a>
+                                                <ul>
+                                                    @foreach (var d in Model)
+                                                    {
+                                                        if (c.ID == d.ParentID)
+                                                        {
+                                                            <li>
+                                                                <a href="~/@d.Slug" class="font-weight-bold">@d.Name</a>
+                                                            </li>
+                                                        }
+                                                    }
+                                                </ul>
+                                            </li>
                                         }
-                                    </ul>
-                                </li>
+                                i++;
                             }
-                            i++;
-                        }
+                        <li><a href="/tin-tuc"><i class="nicon-12"></i> &nbsp;Tin tức</a></li>
+                        <li><a href="/lien-he"><i class="nicon-6"></i> &nbsp;Liên hệ</a></li>
+                        <li><a href="/san-pham"><i class="nicon-1"></i> &nbsp;Sản phẩm</a></li>
                     </ul>
                 </nav>
             </div>
