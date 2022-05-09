@@ -178,10 +178,6 @@ namespace WebsiteBanDoGiaDung.Controllers
         public ActionResult ProductDetail(String slug)
         {
             var getP = db.Products.Where(m => m.Slug == slug && m.Status == 1).First();
-
-
-
-
             ViewBag.listOther = db.Products.Where(m => m.Status == 1 && m.CateID == getP.CateID && m.ID != getP.ID).OrderByDescending(m => m.Created_at).ToList();
 
             return View("ProductDetail", getP);
