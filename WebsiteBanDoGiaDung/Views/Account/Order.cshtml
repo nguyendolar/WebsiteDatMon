@@ -149,7 +149,7 @@
                                     }
                                 }
                             </button>
-                            @if (i.IsPayment)
+                            @if (i.IsPayment || i.Status == 3)
                             {
                                 <p style="color:forestgreen;margin-top:10px">Đã thanh toán</p>
                             }

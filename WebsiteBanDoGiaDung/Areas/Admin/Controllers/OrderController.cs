@@ -19,10 +19,9 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
             var results = (from od in db.Orderdetails
                            join o in db.Orders on od.OrderID equals o.ID
                            join u in db.Users on o.UserID equals u.ID
-                           where o.Trash != 1
-                           
+                           where o.Trash != 1                         
                            group od by new { od.OrderID, o, u } into groupb
-                           orderby groupb.Key.o.CreateDate descending
+                           orderby groupb.Key.OrderID ascending
                            select new ListOrder
                            {
                                ID = groupb.Key.OrderID,

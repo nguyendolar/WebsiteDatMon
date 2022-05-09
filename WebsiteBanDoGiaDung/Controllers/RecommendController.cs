@@ -39,12 +39,14 @@ namespace WebsiteBanDoGiaDung.Controllers
             return View();
         }
 
+        //công thứ căn bậc 2 của bình phương kd1 -kd2 + bình phương vd1-vd2
         private float CalcDistancs(string longTiA,string latA, string longTiB, string latB)
         {
             float distance = (float)Math.Pow(float.Parse(longTiA) - float.Parse(longTiB), 2) + (float)Math.Pow(float.Parse(latA) - float.Parse(latB), 2);         
             return (float)Math.Sqrt(distance);
         }
 
+        // tinh xấp xỉ
         private List<ResultRecommend> KNearestNeighbor(string longTi, string lat)
         {
             var listBranch = GetList();
@@ -66,7 +68,8 @@ namespace WebsiteBanDoGiaDung.Controllers
             List<ResultRecommend> resultSort = distances.OrderBy(x => x.Value).ToList();
             return resultSort;
         }
-
+        
+        //tính được km
         private int Distance(string lat1, string lon1, string lat2, string lon2)
         {
             var p = 0.017453292519943295;    // Math.PI / 180
