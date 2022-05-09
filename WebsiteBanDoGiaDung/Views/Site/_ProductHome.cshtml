@@ -24,10 +24,13 @@
                 <div class="price">
                     @String.Format("{0:0,0₫}", row.ProPrice)
                 </div>
-                <div class="old-price float-left">
-                    @String.Format("{0:0,0₫}", row.Price)
-                </div>
-                <div class="khongbietdattenlagi float-left">(-@String.Format("{0:0}", ((row.Price - row.ProPrice) / row.Price * 100))%)</div>
+                @if ((row.Price - row.ProPrice) / row.Price * 100 != 0)
+                {
+                    <div class="old-price float-left">
+                        @String.Format("{0:0,0₫}", row.Price)
+                    </div>
+                    <div class="khongbietdattenlagi float-left"> (-@String.Format("{0:0}", ((row.Price - row.ProPrice) / row.Price * 100))%)</div>
+                }
             </div>
         </a>
     </div>

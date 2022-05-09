@@ -62,20 +62,24 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-12 bg-danger rounded-top"
-                         style="background: linear-gradient(to right,#e75a23 0,#bf081f 100%);">
-                        <div class="text-light text-center font-weight-bold py-2 mt-2">
-                            MUA ONLINE GIẢM SỐC
-                            <strong class="text-warning d-inline-block">
-                                @String.Format("{0:0}", ((Model.Price - Model.ProPrice) / Model.Price * 100))%
-                            </strong> CÒN
+                    @if ((Model.Price - Model.ProPrice) / Model.Price * 100 != 0)
+                    {
+                        <div class="col-12 bg-danger rounded-top"
+                             style="background: linear-gradient(to right,#e75a23 0,#bf081f 100%);">
+                            <div class="text-light text-center font-weight-bold py-2 mt-2">
+                                MUA ONLINE GIẢM SỐC
+                                <strong class="text-warning d-inline-block">
+                                    @String.Format("{0:0}", ((Model.Price - Model.ProPrice) / Model.Price * 100))%
+                                </strong> CÒN
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-12 rounded-bottom" style="background:#eee">
-                        <div class="text-center font-weight-bold py-2 mt-2 h4" style="color:#bf081f">
-                            @String.Format("{0:0,0₫}", Model.ProPrice)
+                        <div class="col-12 rounded-bottom" style="background:#eee">
+                            <div class="text-center font-weight-bold py-2 mt-2 h4" style="color:#bf081f">
+                                @String.Format("{0:0,0₫}", Model.ProPrice)
+                            </div>
                         </div>
-                    </div>
+                    }
+
                 </div>
             
             
@@ -190,7 +194,7 @@
         <div id="owl-wrap" class="owl-carousel owl-theme">
             @foreach (var i in ViewBag.listOther)
             {
-<div class="p-item">
+<div class="p-item" style="margin-right:10px">
     <a href="~/@i.Slug">
         <div class="p-img">
             <img src="~/Public/images/products/@i.Image" alt="" class="beau">

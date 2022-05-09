@@ -155,12 +155,19 @@
                             }
                             else
                             {
-                                if (i.Status != 0)
+                                if (i.Status < 2 && i.Status != 0)
                                 {
                                     <button type="button" style="margin-top: 10px; width: 50%;margin-left:5px;  height: 42px; border : 0; background-color: #C71585; color: #fff; font-size: 14px">
                                         <a href="@Url.Action("PaymentMoMo","Cart",new { id = i.ID })" class="text-white text-decoration-none"> Thanh toán MoMo</a>
                                     </button>
 
+                                }
+                                else if (i.Status == 2)
+                                {
+                                    <p style="margin-top:10px">Thanh toán khi nhận hàng</p>
+                                }else if(i.Status == 0)
+                                {
+                                    <p style = "color:red ;margin-top:10px" > Đã hủy</p>
                                 }
 
                             }

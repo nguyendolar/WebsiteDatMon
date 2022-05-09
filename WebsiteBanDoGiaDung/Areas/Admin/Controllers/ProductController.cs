@@ -246,16 +246,16 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
         {
             var list = from o in db.Orders
                        join od in db.Orderdetails on o.ID equals od.OrderID
-                       where o.Trash != 1
+                       where o.Trash != 1 && o.Status != 0
                        join p in db.Products on od.ProductID equals p.ID
-                       group p by new { p.ID, p.Name, p.Image } into groupb
+                       group od by new { p.ID, p.Name, p.Image,od.Quantity } into groupb
                        orderby groupb.Key.ID descending
                        select new ProductTop
                        {
                            Id = groupb.Key.ID,
                            Img = groupb.Key.Image,
                            Name = groupb.Key.Name,
-                           Count = groupb.Sum(m=>m.Quantity)
+                           Count = groupb.Sum(m => m.Quantity)
                        };
 
             return View(list.ToList());
