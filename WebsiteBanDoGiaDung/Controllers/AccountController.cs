@@ -124,10 +124,23 @@ namespace WebsiteBanDoGiaDung.Controllers
         {
             try
             {
-                var checkPM = db.Users.Any(m => m.Phone == user.Phone && m.Email.ToLower().Equals(user.Email.ToLower()));
-                if (checkPM)
+                if(user.Fullname == null)
                 {
-                    return Json(new { Code = 1, Message = "Số điện thoại hoặc Email đã được sử dụng." });
+                    return Json(new { Code = 1, Message = "Họ tên không được bỏ trống" });
+                   
+                }else if(user.Address == null)
+                {
+                    return Json(new { Code = 1, Message = "Địa chỉ không được bỏ trống" });
+                }
+                else if(user.Name == null)
+                {
+                    return Json(new { Code = 1, Message = "Tài khoản không được bỏ trống" });
+
+                }
+                var checkPM = db.Users.FirstOrDefault(m => m.Phone == user.Phone || m.Email.ToLower().Equals(user.Email.ToLower()) || m.Name == user.Name);
+                if (checkPM != null)
+                {
+                    return Json(new { Code = 1, Message = "Số điện thoại , email , hoặc tài khoản đã được sử dụng." });
                 }
                 user.Gender = 1;
                 user.Image = "";

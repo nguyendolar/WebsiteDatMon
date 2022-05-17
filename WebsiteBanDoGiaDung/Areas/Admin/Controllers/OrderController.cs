@@ -21,7 +21,7 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
                            join u in db.Users on o.UserID equals u.ID
                            where o.Trash != 1                         
                            group od by new { od.OrderID, o, u } into groupb
-                           orderby groupb.Key.OrderID ascending
+                           orderby roupb.Key.o.CreateDate ascending
                            select new ListOrder
                            {
                                ID = groupb.Key.OrderID,
