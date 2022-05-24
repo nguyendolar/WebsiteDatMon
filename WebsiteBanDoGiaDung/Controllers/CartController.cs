@@ -183,7 +183,7 @@ namespace WebsiteBanDoGiaDung.Controllers
             string accessKey = "iPXneGmrJH0G8FOP";
             string serectkey = "sFcbSGRSJjwGxwhhcEktCHWYUuTuPNDB";
             string orderInfo = "Thanh toán cho đơn hàng tại web";
-            string returnUrl = "https://localhost:44357/account/order";
+            string returnUrl = "https://localhost:44357/Cart/ReturnUrl/" + id;
             string notifyurl = "http://ba1adf48beba.ngrok.io/Home/SavePayment"; //lưu ý: notifyurl không được sử dụng localhost, có thể sử dụng ngrok để public localhost trong quá trình test
 
             string amount = total.ToString();
@@ -228,9 +228,16 @@ namespace WebsiteBanDoGiaDung.Controllers
 
             JObject jmessage = JObject.Parse(responseFromMomo);
 
+            
+            return Redirect(jmessage.GetValue("payUrl").ToString());
+        }
+
+        public ActionResult ReturnUrl(int id)
+        {
+            var obj = db.Orders.Where(x => x.ID == id).FirstOrDefault();
             obj.IsPayment = true;
             db.SaveChanges();
-            return Redirect(jmessage.GetValue("payUrl").ToString());
+            return Redirect("https://localhost:44357/account/order");
         }
 
         //Khi thanh toán xong ở cổng thanh toán Momo, Momo sẽ trả về một số thông tin, trong đó có errorCode để check thông tin thanh toán
