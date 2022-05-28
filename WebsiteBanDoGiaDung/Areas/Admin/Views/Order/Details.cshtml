@@ -6,6 +6,20 @@
 }
 @Html.Partial("_MessageAlert")
 <section class="content py-2">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var elText = document.getElementById("textqr1").value;
+            var qrcode = new QRCode("id_qrcode1", {
+                text: elText.toString(),
+                width: 150,
+                height: 150,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        });
+      
+    </script>
     <div class="container-fluid">
         <!--Content-->
         <div class="card">
@@ -62,17 +76,19 @@
                                 foreach (var c in ViewBag.orderDetails)
                                 {
                                     ThanhTien += c.Amount;
-                    <tr>
-                        @foreach (var y in ViewBag.productOrder)
-                        {
-                            if (y.ID == c.ProductID)
-                            {
-        <td> <img src="~/Public/images/products/@y.Image" alt="@y.Name" width="70">@y.Name</td>}
-                        }
-                        <td>    @String.Format("{0:0,0₫}", c.Price)</td>
-                        <td class="text-center">x    @c.Quantity</td>
-                        <td>    @String.Format("{0:0,0₫}", c.Amount) </td>
-                    </tr> } }
+                                    <tr>
+                                        @foreach (var y in ViewBag.productOrder)
+                                        {
+                                            if (y.ID == c.ProductID)
+                                            {
+                                                <td> <img src="~/Public/images/products/@y.Image" alt="@y.Name" width="70">@y.Name</td>
+                                            }
+                                        }
+                                        <td>    @String.Format("{0:0,0₫}", c.Price)</td>
+                                        <td class="text-center">x    @c.Quantity</td>
+                                        <td>    @String.Format("{0:0,0₫}", c.Amount) </td>
+                                    </tr>
+                                } }
 
                             <tr class="border-top">
                                 <td class="text-right" colspan="3"> Thành tiền</td>
@@ -86,12 +102,31 @@
                                 <td class="text-right" colspan="3"> Tổng cộng </td>
                                 <td>@String.Format("{0:0,0₫}", ThanhTien) </td>
                             </tr>
+                            <tr>
+                                <td class="text-right" colspan="3">Trang thái đơn hàng </td>
+                                <td>
+                                    <div id="id_qrcode1"></div>
+                                    @if (ViewBag.Order.Status == 1)
+                                    {
+                                        <input id="textqr1" type="hidden" value="Dang xu ly" />
+                                    }
+                                    else if (ViewBag.Order.Status == 2)
+                                    {
+                                        <input id="textqr1" type="hidden" value="Dang giao hang" />
+                                    }
+                                    else if (ViewBag.Order.Status == 3)
+                                    {
+                                        <input id="textqr1" type="hidden" value="Da giao hang" />
+                                    }
+                                </td>
+                            </tr>
 
                         </tbody>
                     </table>
                     <!-- /.card -->
                 </div>
             </section>
-            </div>
         </div>
-    </section>
+    </div>
+
+</section>

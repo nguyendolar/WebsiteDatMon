@@ -42,7 +42,7 @@
                         {
                         <tr>
                             <td class="text-center">@Html.DisplayFor(modelItem => item.Id)</td>
-                            <td><a href="~/Admin/ProductOwner/Details/@item.Id">@Html.DisplayFor(modelItem => item.Name)</a>  </td>
+                            <td><p>@Html.DisplayFor(modelItem => item.Name)</p>  </td>
                             <td class="text-center">
                                 <label class="switch">
                                     @if (item.Status == 1)

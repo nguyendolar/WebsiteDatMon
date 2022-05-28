@@ -19,6 +19,7 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
         public ActionResult Index()
         {
             ViewBag.countTrash = db.Products.Where(m => m.Status == 0).Count();
+            ViewBag.branch = db.ProductOwners.ToList();
             var list = from p in db.Products
                        join c in db.Categorys
                        on p.CateID equals c.ID
@@ -32,7 +33,8 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
                            ProductName = p.Name,
                            ProductStatus = p.Status,
                            ProductDiscount = p.Discount,
-                           CategoryName = c.Name
+                           CategoryName = c.Name,
+                           OwnerId = p.OwnerId
                        };
             return View(list.ToList());
         }
@@ -116,6 +118,54 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
                 db.SaveChanges();
                 Notification.set_flash("Thêm mới sản phẩm thành công!", "success");
                 return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public ActionResult AddBranch(FormCollection form)
+        {
+            ViewBag.ListCat = new SelectList(db.Categorys.Where(m => m.Status != 0), "ID", "Name", 0);
+
+            int idProduct = Int32.Parse(form["idProduct"]);
+            int idBranch = Int32.Parse(form["chiNhanh"]);
+
+            var prodcut = db.Products.FirstOrDefault(x => x.ID == idProduct);
+            MProduct mProduct = new MProduct();
+            if(idBranch == prodcut.OwnerId)
+            {
+                Notification.set_flash("Sản phẩm này đã tồn tại chi nhánh!", "danger");
+                return Redirect("/Admin/Product/Index");
+            }
+            else
+            {
+                mProduct.Price = prodcut.Price;
+                mProduct.ProPrice = prodcut.ProPrice;
+
+                String strSlug = XString.ToAscii(prodcut.Name);
+                mProduct.Slug = strSlug;
+                mProduct.Name = prodcut.Name;
+                mProduct.CateID = prodcut.CateID;
+                mProduct.Description = prodcut.Description;
+                mProduct.Detail = prodcut.Detail;
+                mProduct.Quantity = prodcut.Quantity;
+                mProduct.Status = 1;
+                mProduct.NewPromotion = "Khuyến mãi";
+                mProduct.Specification = "Đặt món";
+                mProduct.MetaKey = "Đặt món";
+                mProduct.MetaDesc = "Đặt món";
+                mProduct.Discount = 2;
+                mProduct.Installment = 2;
+                mProduct.Created_at = DateTime.Now;
+                mProduct.Created_by = 1;
+                mProduct.Updated_at = DateTime.Now;
+                mProduct.Updated_by = 1;
+                mProduct.Image = prodcut.Image;
+                mProduct.OwnerId = idBranch;
+                db.Products.Add(mProduct);
+                db.SaveChanges();
+                Notification.set_flash("Thêm chi nhánh cho sản phẩm thành công!", "success");
+                return Redirect("/Admin/Product/Index");
+            }
+          
         }
 
         public ActionResult Edit(int? id)

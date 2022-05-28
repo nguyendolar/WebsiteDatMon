@@ -37,6 +37,7 @@
                 <div class="col-6 profile">
                     Thông tin giao hàng
                     <hr>
+                    <form action="" method="post"></form>
                     <div class="row">
                         <div class="col-3 text-right my-3">Họ tên</div>
                         <div class="col-9 my-2">
@@ -54,17 +55,19 @@
                     <div class="row">
                         <div class="col-3 text-right my-3">Email</div>
                         <div class="col-9 my-2">
-                            <input id="email" name="Email1" type="text" class="form-control rounded-0"
+                            <input id="email" name="Email" type="text" class="form-control rounded-0"
                                    value="@ViewBag.Info.Email">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-3 text-right my-3">Địa chỉ</div>
                         <div class="col-9 my-2">
-                            <input id="address" name="Address1" type="text" class="form-control rounded-0"
+                            <input id="address" name="Address" type="text" class="form-control rounded-0"
                                    value="@ViewBag.Info.Address">
                         </div>
                     </div>
+                        <p style="color:red">*Lưu ý:Mặc định phương thức thanh toán của hệ thống là thành toán  khi nhận hàng , nếu quý khách muốn thanh toán MoMo vui lòng vào danh sách đơn hàng sau khi đặt hàng để thực hiện</p>
+                   
                 </div>
                 <div class="col-6">
                     <div class=" text-left">Hoàn tất đơn hàng</div>

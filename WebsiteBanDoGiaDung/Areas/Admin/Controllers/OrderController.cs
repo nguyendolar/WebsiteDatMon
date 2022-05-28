@@ -97,6 +97,7 @@ namespace WebsiteBanDoGiaDung.Areas.Admin.Controllers
                 return RedirectToAction("Index", "Order");
             }
             ViewBag.orderDetails = db.Orderdetails.Where(m => m.OrderID == id).ToList();
+            ViewBag.Order = mOrder;
             ViewBag.productOrder = db.Products.ToList();
             return View(mOrder);
         }

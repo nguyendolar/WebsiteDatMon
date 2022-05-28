@@ -14,5 +14,6 @@ using System.Web;
         public int ProductStatus { get; set; }
         public int ProductDiscount { get; set; }
         public string CategoryName { get; set; }
+        public int? OwnerId { get; set; }
     }
 }
