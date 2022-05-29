@@ -87,6 +87,11 @@ namespace WebsiteBanDoGiaDung.Controllers
                         return Json(1);
                     case "minus":
                         c.Quantity--;
+                        if(c.Quantity <= 0)
+                        {
+                            c.Quantity = 1;
+                            return Json(4);
+                        }
                         return Json(2);
                     case "remove":
                         sCart.Remove(c);
