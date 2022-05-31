@@ -91,7 +91,7 @@
                                 <div class="form-group">
                                     @Html.Label("Số lượng", new { htmlAttributes = new { @class = "form-control" } })
                                     <div class="">
-                                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { type = "number", @min = "1", @class = "form-control" } })
+                                        @Html.EditorFor(model => model.Quantity, new { htmlAttributes = new { type = "number", @min = "0", @class = "form-control" } })
                                         @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
                                     </div>
                                 </div>

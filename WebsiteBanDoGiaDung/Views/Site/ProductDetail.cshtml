@@ -101,30 +101,42 @@
 
 
 
-            <div class="mt-3">
-                <small class="text-secondary d-inline pr-3">Số lượng</small>
+        <div class="mt-3">
+            <small class="text-secondary d-inline pr-3">Số lượng</small>
 
-                <div class="btn btn-white rounded-0 border tru" onclick="return Tru();"
-                     style="width:30px; height:30px;margin-top:-2px; line-height:15px;font-weight: bold;">
-                    -
-                </div>
-                <input type="number" style="width:50px; height:30px;margin:0 -6px;outline:0;text-align:center"
-                       class="rounded-0 border text-secondary etd pl-3 border-right-0" value="1" min="1"
-                       id="qtyDpt">
-                <div class="btn btn-white rounded-0 border cong" onclick="return Cong();"
-                     style="width:30px; height:30px;margin-top:-2px; line-height:15px;font-weight: bold;">
-                    +
-                </div>
-                <input type="text" name="count-xyz" style="display:none" value="@Model.Quantity" />
-                <small class="text-secondary d-inline ml-4">@Model.Quantity sản phẩm có sẵn</small>
+            <div class="btn btn-white rounded-0 border tru" onclick="return Tru();"
+                 style="width:30px; height:30px;margin-top:-2px; line-height:15px;font-weight: bold;">
+                -
             </div>
+            <input type="number" style="width:50px; height:30px;margin:0 -6px;outline:0;text-align:center"
+                   class="rounded-0 border text-secondary etd pl-3 border-right-0" value="1" min="1"
+                   id="qtyDpt">
+            <div class="btn btn-white rounded-0 border cong" onclick="return Cong();"
+                 style="width:30px; height:30px;margin-top:-2px; line-height:15px;font-weight: bold;">
+                +
+            </div>
+            <input type="text" name="count-xyz" style="display:none" value="@Model.Quantity" />
+            @if (Model.Quantity > 0)
+            {
+                <small class="text-secondary d-inline ml-4">@Model.Quantity sản phẩm có sẵn</small>
+            }
+            else
+            {
+                <small class="text-secondary d-inline ml-4" style="color:red !important">Đã hết hàng</small>
+            }
+
+        </div>
             <div class="row">
                 <div class="col-6">
-                    <div class="nut-mua" id="buy-btn" data-id="@Model.ID">
-                        <button style="width:100%; height:49px; border:1px solid #ee4d2d; background:rgba(255,87,34,.15); color:#ee4d2d; font-size:14px">
-                            <i class="fas fa-cart-plus"></i> &nbsp Thêm vào giỏ hàng
-                        </button>
-                    </div>
+                    @if (Model.Quantity > 0)
+                    {
+                        <div class="nut-mua" id="buy-btn" data-id="@Model.ID">
+                            <button style="width:100%; height:49px; border:1px solid #ee4d2d; background:rgba(255,87,34,.15); color:#ee4d2d; font-size:14px">
+                                <i class="fas fa-cart-plus"></i> &nbsp Thêm vào giỏ hàng
+                            </button>
+                        </div>
+                    }
+
                 </div>
                 <div class="col-6">
 
